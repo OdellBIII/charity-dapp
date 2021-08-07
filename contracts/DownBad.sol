@@ -2,36 +2,37 @@
 pragma solidity >=0.4.22 <0.9.0;
 
 contract DownBad {
-	
-	mapping(address => uint) downBadIndices;
-	uint[] balances = new uint[](1);
-	
+
+	mapping(address => uint) public balances;
+	mapping (address => bool) public downBadAddresses;
+
 	function () external payable {
 
-		uint split = msg.value / balances.length;	
-		for(uint i = 0; i < balances.length; i++){
-			
-			balances[i] += split;
+		balances[msg.sender] += msg.value;
+	}
+
+	function getBalance(address _addr) public view returns (uint) {
+
+		return balances[_addr];
+	}
+
+	function joinDownBad(address _downBad) public {
+
+		if(balances[msg.sender] > 0){
+
+			downBadAddresses[_downBad] = true;
 		}
 	}
 
-	function joinDownBad() public {
-		
-		if(downBadIndices[msg.sender] == 0){
+	function isDownBad(address _addr) public view returns (bool) {
 
-			downBadIndices[msg.sender] = balances.length;
-			balances.push(0);
-		}
+		return downBadAddresses[_addr];
 	}
-	
+
 
 	function withdraw() public {
+		if(downBadAddresses[msg.sender]){
 
-		if(downBadIndices[msg.sender] != 0){
-			
-			uint index = downBadIndices[msg.sender];
-			address payable addr = address(uint160(msg.sender));
-			addr.transfer(balances[index]);
 		}
 	}
 
