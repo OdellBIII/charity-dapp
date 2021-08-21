@@ -16,6 +16,11 @@ contract DownBad {
 		return balances[_addr];
 	}
 
+	function getContractBalance() public view returns (uint) {
+
+		return address(this).balance;
+	}
+
 	function joinDownBad(address _downBad) public {
 
 		if(balances[msg.sender] > 0){
@@ -31,7 +36,18 @@ contract DownBad {
 
 
 	function withdraw() public {
+
 		if(downBadAddresses[msg.sender]){
+
+			uint contractBalance = address(this).balance;
+
+			msg.sender.transfer(contractBalance);
+			/*
+			(bool success, ) = msg.sender.call.value(contractBalance)("");
+			if(!success){
+				revert();
+			}
+			*/
 
 		}
 	}
