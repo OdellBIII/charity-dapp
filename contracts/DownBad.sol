@@ -62,6 +62,7 @@ contract DownBad {
 			manager.downBadAddressesArr[index] = manager.downBadAddressesArr[arrLength - 1];
 			delete manager.downBadAddressesArr[arrLength - 1];
 			manager.downBadAddressesArr.length--;
+			manager.downBadAddressesPresent[_downBad] = false;
 		}
 
 	}
