@@ -1,0 +1,34 @@
+{
+  "name": "downbad",
+  "version": "1.0.0",
+  "description": "A smart contract proof of concept for decentralized charities",
+  "main": "truffle-config.js",
+  "directories": {
+    "test": "test"
+  },
+  "dependencies": {
+    "@drizzle/store": "^1.5.3",
+    "express": "^4.17.1",
+    "web3": "^1.5.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TreBlack/DownBad.git"
+  },
+  "keywords": [
+    "smart",
+    "contract",
+    "ethereum",
+    "solidity"
+  ],
+  "author": "Odell Blackmon III",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TreBlack/DownBad/issues"
+  },
+  "homepage": "https://github.com/TreBlack/DownBad#readme"
+}

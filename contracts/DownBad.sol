@@ -3,11 +3,9 @@ pragma solidity >=0.4.22 <0.9.0;
 
 contract DownBad {
 
-	/*
-	mapping(address => uint) public downBadIndices;
-	mapping (address => bool) public downBadAddresses;
-	address payable downBadAddressesArr[];
-	*/
+	event JoinDownBad(address payable _downBadAddr);
+	event LeftDownBad(address payable _downBadAddr);
+	event Donation(address _donatorAddr);
 
 	struct DownBadManager {
 		address payable[] downBadAddressesArr;
@@ -16,10 +14,6 @@ contract DownBad {
 	}
 
 	DownBadManager manager;
-
-	constructor() public {
-
-	}
 
 	function () external payable {
 
@@ -31,7 +25,10 @@ contract DownBad {
 
 				manager.downBadAddressesArr[i].transfer(split);
 			}
+
+			emit Donation(msg.sender);
 		}
+
 	}
 
 	function isDownBad(address _addr) public view returns (bool) {
@@ -47,7 +44,7 @@ contract DownBad {
 			manager.downBadAddressesPresent[_downBad] = true;
 			uint arrLength = manager.downBadAddressesArr.length;
 			manager.downBadIndices[_downBad] = arrLength - 1;
-
+			emit JoinDownBad(_downBad);
 		}
 	}
 
@@ -61,8 +58,8 @@ contract DownBad {
 			uint arrLength = manager.downBadAddressesArr.length;
 			manager.downBadAddressesArr[index] = manager.downBadAddressesArr[arrLength - 1];
 			delete manager.downBadAddressesArr[arrLength - 1];
-			manager.downBadAddressesArr.length--;
 			manager.downBadAddressesPresent[_downBad] = false;
+			emit LeftDownBad(_downBad);
 		}
 
 	}
