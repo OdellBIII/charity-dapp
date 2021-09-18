@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Web 3 Demo</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+</head>
+
+<body>
+
+    DownBad Demo
+    <br >
+    <input type="text" id="address" value="0x0">
+    <button onclick="joinDownBad();">Join DownBad</button>
+    <button onclick="leaveDownBad();">Leave DownBad</button>
+    <br /><br />
+    Status: <span id="status">Loading...</span>
+    <br/>
+    <ol id="downBadList">
+
+    </ol>
+
+    <script type="text/javascript">
+
+      async function loadWeb3() {
+        if (window.ethereum) {
+          window.web3 = new Web3(window.ethereum);
+          window.ethereum.enable();
+        }else{
+          updateStatus("Web3.js not working");
+        }
+      }
+
+      async function load() {
+          await loadWeb3();
+          window.contract = await loadContract();
+          await watchJoinDownBad();
+          updateStatus('Ready!');
+
+      }
+
+      async function loadContract(){
+        return await new window.web3.eth.Contract([{"anonymous":false,"inputs":[{"indexed":false,"internalType":"address","name":"_donatorAddr","type":"address"}],"name":"Donation","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"address payable","name":"_downBadAddr","type":"address"}],"name":"JoinDownBad","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"address payable","name":"_downBadAddr","type":"address"}],"name":"LeftDownBad","type":"event"},{"inputs":[{"internalType":"address","name":"_addr","type":"address"}],"name":"isDownBad","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address payable","name":"_downBad","type":"address"}],"name":"joinDownBad","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address payable","name":"_downBad","type":"address"}],"name":"removeDownBad","outputs":[],"stateMutability":"nonpayable","type":"function"},{"stateMutability":"payable","type":"receive"}], '0x873f15584e35A46B9051B2598f7b58e4610A7Ca9');
+      }
+
+      async function joinDownBad(){
+        var address = document.getElementById("address").value;
+        const account = await getCurrentAccount();
+        await window.contract.methods.joinDownBad(address).send({from : account});
+        updateStatus("Joined the DownBad");
+      }
+
+      async function getCurrentAccount(){
+        const accounts = await window.web3.eth.getAccounts();
+        return accounts[0];
+
+      }
+      async function leaveDownBad(){
+        var address = Document.getElementById("address").value;
+        const account = await getCurrentAccount();
+        await window.contract.methods.removeDownBad(address).send({from : account});
+        updateStatus("Left the DownBad");
+      }
+
+      function updateStatus(status) {
+          const statusEl = document.getElementById('status');
+          statusEl.innerHTML = status;
+          console.log(status);
+      }
+
+      function watchJoinDownBad(){
+
+        // Watching JoinDownBad Event
+        window.contract.events.JoinDownBad({}, function(error, event){
+          console.log(event);
+        })
+        .on('data', (event) => {
+          console.log(event);
+        })
+        .on('error', (error) => {
+          console.log("Something fucked up");
+        });
+
+      }
+
+      function updateDownBadList(address){
+        const downBadList = document.getElementById("downBadList");
+        var newElement = document.createElement('li');
+        newElement.appendChild(document.createTextNode(address));
+
+        downBadList.appendChild(newElement);
+      }
+      load();
+    </script>
+</body>
+
+</html>

@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import DownBadContract from "./contracts/DownBad.json";
-import getWeb3 from "./getWeb3";
+import web3 from { web3 };
 
 import "./App.css";
 
