@@ -14,8 +14,10 @@
 
     DownBad Demo
     <br >
-    <input type="text" id="address" value="0x0">
-    <button onclick="joinDownBad();">Join DownBad</button>
+    <form action="/joinDownBad" method="post">
+      <input type="text" id="address" value="0x0">
+      <button>Join DownBad</button>
+    </form>
     <button onclick="leaveDownBad();">Leave DownBad</button>
     <br /><br />
     Status: <span id="status">Loading...</span>
