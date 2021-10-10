@@ -52,7 +52,7 @@ app.get('/', function(req, res){
 app.post('/joinDownBad', function(req, res){
 
   // Print input to console
-  console.log(req.body);
+  console.log(req.body.address);
 });
 
 app.listen(port || 3000, () => {console.log("Server is up...")});
