@@ -33,7 +33,7 @@ var provider = new Web3.providers.HttpProvider("http://localhost:8545");
 
 // Read JSON and attach RPC connection
 Contract.setProvider("http://localhost:8545");
-var downBad = new Contract(DownBadJSON.abi);
+var downBad = new Contract(DownBadJSON.abi, '0xf11fdf80785243e5bf04189d3ac8283e0d6bdbb6');
 
 app.get('/', function(req, res){
 
@@ -44,10 +44,13 @@ app.post('/joinDownBad', function(req, res){
 
   // Print input to console
   console.log(req.body.address);
-  downBad.methods.joinDownBad(req.body.address).call({from : req.body.address, function(error, result){
+  downBad.methods.joinDownBad(req.body.address).send({from : req.body.address}).then((value) => {
+    console.log(value);
+  }).catch((error) => {
+    console.log(error);
+  });
 
-    res.send('Received your request!');
-  }});
+  res.send();
 });
 
 app.listen(port || 3000, () => {console.log("Server is up...")});
