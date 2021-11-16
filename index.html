@@ -8,16 +8,14 @@
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
     <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="contract.js">
 </head>
 
 <body>
 
     DownBad Demo
     <br >
-    <form action="/joinDownBad" method="post">
-      <input type="text" name="address" id="address" value="0x0">
-      <input type="submit" value="Join DownBad">Join DownBad</input>
-    </form>
+    <button id="joinDownBad">Join Down Bad</button>
     <button onclick="leaveDownBad();">Leave DownBad</button>
     <br /><br />
     Status: <span id="status">Loading...</span>
@@ -27,7 +25,7 @@
     </ol>
 
     <script type="text/javascript">
-
+    /*
       async function loadWeb3() {
         if (window.ethereum) {
           window.web3 = new Web3(window.ethereum);
@@ -97,6 +95,7 @@
         downBadList.appendChild(newElement);
       }
       load();
+      */
     </script>
 </body>
 

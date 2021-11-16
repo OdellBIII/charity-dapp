@@ -43,14 +43,18 @@ app.get('/', function(req, res){
 app.post('/joinDownBad', function(req, res){
 
   // Print input to console
-  console.log(req.body.address);
+  console.log('This is the requesting address: ' + req.body.address);
   downBad.methods.joinDownBad(req.body.address).send({from : req.body.address}).then((value) => {
-    console.log(value);
+    if(value.status){
+      console.log("Successfully added user to DownBad!");
+      res.status(204);
+      res.send();
+    }
   }).catch((error) => {
     console.log(error);
+    res.send();
   });
 
-  res.send();
 });
 
 app.listen(port || 3000, () => {console.log("Server is up...")});
