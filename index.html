@@ -7,96 +7,147 @@
     <title>DownBad Contract</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
 
-    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
-    <script src="contract.js">
+    <!-- Importing AJAX -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <!-- Importing Ethers.js-->
+    <script src="https://cdn.ethers.io/lib/ethers-5.1.umd.min.js" type="application/javascript"></script>
+    <script type="text/javascript">
+
+
+    // A Web3Provider wraps a standard Web3 provider, which is
+    // what MetaMask injects as window.ethereum into each page
+    const provider = new ethers.providers.Web3Provider(window.ethereum)
+
+    // The MetaMask plugin also allows signing transactions to
+    // send ether and pay to change state within the blockchain.
+    // For this, you need the account signer...
+    const signer = provider.getSigner()
+
+    // This the contract address on the blockchain. This needs to be updated for every
+    // new blockchain that this is deployed on
+    const DownBadAddress = '0xa0fd891264670c3db974aae66f199c3600d0e31a';
+
+    // Fetching the contract ABI json that is sent with the HTML file
+    fetch("DownBad.json").then(response => {
+
+        return response.json();
+
+    }).then(result => {
+
+        const DownBadABI = result.abi;
+
+        // DownBad Contract Object
+        const DownBadContract = new ethers.Contract(DownBadAddress, DownBadABI, provider);
+        // Down Bad Contract object that can sign transactions
+        const DownBadWithSigner = DownBadContract.connect(signer);
+
+        // Assigning an event listener to JoinDownBad button
+        const JoinDownBadButton = document.getElementById('joinDownBad');
+        JoinDownBadButton.addEventListener('click', () => {
+          window.ethereum.request({ method: 'eth_requestAccounts' }).then((res, error) => {
+
+            // Gets the user's public address, adds them to the Down Bad list, and updates the status
+            DownBadWithSigner.joinDownBad(res[0]);
+            updateStatus("You have joined the DownBad successfully!");
+          });
+        });
+
+        // Handling JoinDownBad event
+        DownBadContract.on("JoinDownBad", (result) => {
+
+          updateDownBadList(result);
+        });
+
+        // Assigning an event listener to LeaveDownBad button
+        const LeaveDownBadButton = document.getElementById('leaveDownBad');
+        LeaveDownBadButton.addEventListener('click', () => {
+          window.ethereum.request({ method: 'eth_requestAccounts' }).then((res, error) => {
+
+            // Gets the user's public address, remove them from the Down Bad list, and updates the status
+            DownBadWithSigner.removeDownBad(res[0]);
+            updateStatus("You have left the DownBad successfully!");
+          });
+        });
+
+        // Handling LeftDownBad event
+        DownBadContract.on("LeftDownBad", (result) => {
+
+          updateDownBadList(result);
+        });
+
+        // Assigning an event listener to the Donate To Down Bad button
+        const DonateToDownBadButton = document.getElementById('donateToDownBad');
+        DonateToDownBadButton.addEventListener('click', () => {
+
+          var donationAmount = document.getElementById('donationAmount').value;
+          console.log(typeof(donationAmount));
+
+          // Sends the money specified in the number field to the contract
+          signer.sendTransaction({
+            to : DownBadContract.address,
+            value : ethers.utils.parseEther(donationAmount)
+          });
+
+        });
+    });
+
+
+    // Updates the status on the screen for the user
+    function updateStatus(status){
+
+      var statusElement = document.getElementById("status");
+
+      statusElement.innerHTML = status;
+    }
+
+    // Updates the list of Down Bad addresses on the screen
+    function updateDownBadList(newList){
+
+        const nullAddress = '0x0000000000000000000000000000000000000000'
+        var downBadList = document.getElementById("downBadList");
+        downBadList.innerHTML = '';
+        for(var i = 0; i < newList.length; i++){
+          if(newList[i] != nullAddress){
+
+            var nextAddress = document.createElement('li');
+            var addressText = document.createTextNode(newList[i]);
+
+            nextAddress.appendChild(addressText);
+            downBadList.appendChild(nextAddress)
+          }
+        }
+    }
+
+    // Used to check that the user has metamask installed
+    function enableEthereum(){
+
+      const accounts = window.ethereum.request({ method: 'eth_requestAccounts' }).then((res, error) => {
+
+        updateStatus("You have successfully connected to ethereum. You may now join or leave the DownBad list");
+      });
+    }
+
+    </script>
 </head>
 
 <body>
 
     DownBad Demo
-    <br >
+    <br>
+    <button id='enableEthereumButton' onclick="enableEthereum();">Enable Ethereum</buton>
     <button id="joinDownBad">Join Down Bad</button>
-    <button onclick="leaveDownBad();">Leave DownBad</button>
-    <br /><br />
-    Status: <span id="status">Loading...</span>
+    <button id="leaveDownBad">Leave Down Bad</button>
     <br/>
-    <ol id="downBadList">
-
-    </ol>
-
-    <script type="text/javascript">
-    /*
-      async function loadWeb3() {
-        if (window.ethereum) {
-          window.web3 = new Web3(window.ethereum);
-          window.ethereum.enable();
-        }else{
-          updateStatus("Web3.js not working");
-        }
-      }
-
-      async function load() {
-          await loadWeb3();
-          window.contract = await loadContract();
-          await watchJoinDownBad();
-          updateStatus('Ready!');
-
-      }
-
-      async function loadContract(){
-        return await new window.web3.eth.Contract([{"anonymous":false,"inputs":[{"indexed":false,"internalType":"address","name":"_donatorAddr","type":"address"}],"name":"Donation","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"address payable","name":"_downBadAddr","type":"address"}],"name":"JoinDownBad","type":"event"},{"anonymous":false,"inputs":[{"indexed":false,"internalType":"address payable","name":"_downBadAddr","type":"address"}],"name":"LeftDownBad","type":"event"},{"inputs":[{"internalType":"address","name":"_addr","type":"address"}],"name":"isDownBad","outputs":[{"internalType":"bool","name":"","type":"bool"}],"stateMutability":"view","type":"function"},{"inputs":[{"internalType":"address payable","name":"_downBad","type":"address"}],"name":"joinDownBad","outputs":[],"stateMutability":"nonpayable","type":"function"},{"inputs":[{"internalType":"address payable","name":"_downBad","type":"address"}],"name":"removeDownBad","outputs":[],"stateMutability":"nonpayable","type":"function"},{"stateMutability":"payable","type":"receive"}], '0x873f15584e35A46B9051B2598f7b58e4610A7Ca9');
-      }
-
-      async function joinDownBad(){
-        var address = document.getElementById("address").value;
-        const account = await getCurrentAccount();
-        await window.contract.methods.joinDownBad(address).send({from : account});
-        updateStatus("Joined the DownBad");
-      }
-
-      async function getCurrentAccount(){
-        const accounts = await window.web3.eth.getAccounts();
-        return accounts[0];
-
-      }
-      async function leaveDownBad(){
-        var address = Document.getElementById("address").value;
-        const account = await getCurrentAccount();
-        await window.contract.methods.removeDownBad(address).send({from : account});
-        updateStatus("Left the DownBad");
-      }
-
-      function updateStatus(status) {
-          const statusEl = document.getElementById('status');
-          statusEl.innerHTML = status;
-          console.log(status);
-      }
-
-      function watchJoinDownBad(){
-
-        // Watching JoinDownBad Event
-        window.contract.events.JoinDownBad({}, function(error, event){
-          console.log(event);
-        })
-        .on('data', (event) => {
-          console.log(event);
-        })
-        .on('error', (error) => {
-          console.log("Something fucked up");
-        });
-
-      }
-
-      function updateDownBadList(address){
-        const downBadList = document.getElementById("downBadList");
-        var newElement = document.createElement('li');
-        newElement.appendChild(document.createTextNode(address));
-
-        downBadList.appendChild(newElement);
-      }
-      load();
-      */
-    </script>
+    <input id="donationAmount" type="number"> Ether
+    <button id="donateToDownBad">Donate To Down Bad</button>
+    <br/>
+    Status: <span id="status">Please click "Enable Ethereum to get started"</span>
+    <br/>
+    <div>
+      <ol id="downBadList">
+      </ol>
+    </div>
 </body>
 
 </html>

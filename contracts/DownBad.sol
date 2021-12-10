@@ -3,8 +3,8 @@ pragma solidity >=0.4.22 <0.9.0;
 
 contract DownBad {
 
-	event JoinDownBad(address payable _downBadAddr);
-	event LeftDownBad(address payable _downBadAddr);
+	event JoinDownBad(address payable[] _downBadAddressesArr);
+	event LeftDownBad(address payable[] _downBadAddressesArr);
 	event Donation(address _donatorAddr);
 
 	struct DownBadManager {
@@ -44,7 +44,7 @@ contract DownBad {
 			manager.downBadAddressesPresent[_downBad] = true;
 			uint arrLength = manager.downBadAddressesArr.length;
 			manager.downBadIndices[_downBad] = arrLength - 1;
-			emit JoinDownBad(_downBad);
+			emit JoinDownBad(manager.downBadAddressesArr);
 		}
 	}
 
@@ -59,7 +59,7 @@ contract DownBad {
 			manager.downBadAddressesArr[index] = manager.downBadAddressesArr[arrLength - 1];
 			delete manager.downBadAddressesArr[arrLength - 1];
 			manager.downBadAddressesPresent[_downBad] = false;
-			emit LeftDownBad(_downBad);
+			emit LeftDownBad(manager.downBadAddressesArr);
 		}
 
 	}

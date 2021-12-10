@@ -5335,16 +5335,10 @@
       "links": {},
       "address": "0xbf0683cD2b4d95B24EDdA01d53f3fC280035aF88",
       "transactionHash": "0xb5a912cc06ce03e38848a6b8a6f8fe271ff3c480ab8f57fe3b61ee5c6870e9ff"
-    },
-    "1639171454377": {
-      "events": {},
-      "links": {},
-      "address": "0xA0FD891264670c3db974Aae66F199C3600D0e31A",
-      "transactionHash": "0x631bde74dc481070710f6ff14b76cee32586fc364a047caaef23e1c8ece7c92d"
     }
   },
   "schemaVersion": "3.4.2",
-  "updatedAt": "2021-12-10T21:30:15.429Z",
+  "updatedAt": "2021-12-10T18:41:23.582Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}
