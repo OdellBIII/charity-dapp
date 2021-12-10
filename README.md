@@ -4,8 +4,8 @@ The DownBad Smart Contract is meant to serve as a prototype for how simple smart
 ## Getting Started
 
 - Install Metamask
-- Get ethere from Ropsten Test Network
-- Access interface from the following page:
+- Get ether from Ropsten Test Network
+- Access interface from the following page: TODO
 - Enjoy messing around with this prototype
 
 ## Future work
