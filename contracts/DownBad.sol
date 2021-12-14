@@ -49,6 +49,10 @@ contract DownBad {
 	}
 
 
+	function getDownBad() public view returns (address payable[] memory) {
+
+		return manager.downBadAddressesArr;
+	}
 
 	function removeDownBad(address payable _downBad) public {
 

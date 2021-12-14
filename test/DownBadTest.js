@@ -44,7 +44,7 @@ contract("DownBad", accounts => {
       assert.equal(isNotDownBad, false, "The address was added to the DownBad, but should not have");
     });
 
-  it("Should increase the external balance of a DownBad account by 10", async () => {
+  it("Should increase the external balance of a DownBad account by 3 each", async () => {
       const downBad = await DownBad.deployed();
 
       // Add Account 1 to DownBad
@@ -76,7 +76,20 @@ contract("DownBad", accounts => {
       const balanceDifferenceTwo = finalBalanceTwo - initialBalanceTwo;
 
       // Check that the difference is what is expected
-      assert.equal(balanceDifferenceOne, 5, "Account 1 did not receive the correct ether amount");
-      assert.equal(balanceDifferenceTwo, 5, "Account 2 did not receive the correct ether amount");
+      assert.equal(balanceDifferenceOne, 3, "Account 1 did not receive the correct ether amount");
+      assert.equal(balanceDifferenceTwo, 3, "Account 2 did not receive the correct ether amount");
+    });
+
+    it("Should return the list of addresses that were listed on the DownBad", async () => {
+
+      const downBad = await DownBad.deployed();
+
+      const downBadArr = await downBad.getDownBad();
+
+      console.log(downBadArr);
+      assert.equal(downBadArr.length, 3, "The length of the DownBad list is incorrect");
+      assert.equal(downBadArr[1], accounts[1], "The expected was not added to the list");
+      assert.equal(downBadArr[2], accounts[2], "The expected was not added to the list");
+
     });
 });
