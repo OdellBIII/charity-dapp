@@ -10,8 +10,9 @@ Access the following link to download and install the Metamask extension for you
 Once you have Metamask setup and set to the Ropsten Test Network, use the following faucet to add ether to your account: https://faucet.metamask.io/
 
 ### Accessing interface from the following page
-Check out the Github page here: TODO
-- Enjoy messing around with this prototype
+Check out the interface here: https://downbad-interface.herokuapp.com/
+
+### Enjoy messing around with this prototype
 
 ## Future work
 The prototype is meant to 
