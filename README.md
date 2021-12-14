@@ -5,6 +5,7 @@ The DownBad Smart Contract is meant to serve as a prototype for how simple smart
 
 - Install Metamask
 - Get ether from Ropsten Test Network
+- The smart contract is deployed on the Ropsten Test Network at address 0xc38925b4688ff0101A40317c8d64ADD74723aa7e
 - Access interface from the following page: TODO
 - Enjoy messing around with this prototype
 
