@@ -30,7 +30,7 @@
 
     // This the contract address on the blockchain. This needs to be updated for every
     // new blockchain that this is deployed on
-    const DownBadAddress = '0xae3e63e84731319a385686be67c66a7c8d994010';
+    const DownBadAddress = '0xcfb8377cF8c520E098B657888B1eAddbA43e8905';
 
     // Fetching the contract ABI json that is sent with the HTML file
     fetch("DownBad.json").then(response => {
@@ -48,8 +48,13 @@
 
         // Getting list of DownBad addresses and displaying them
 
-        const DownBadList = DownBadContract.getDownBad();
-        updateDownBadList(DownBadList);
+        const DownBadList = DownBadContract.getDownBad().then(downBadArr => {
+
+          //console.log()
+          updateDownBadList(downBadArr);
+        }).catch(err => {
+          console.log(err);
+        });
         // Assigning an event listener to JoinDownBad button
         const JoinDownBadButton = document.getElementById('joinDownBad');
         JoinDownBadButton.addEventListener('click', () => {
@@ -178,6 +183,7 @@
             </div>
             <div>
               <ol id="downBadList">
+                The Down Bad List is loading...
               </ol>
             </div>
           </div>
