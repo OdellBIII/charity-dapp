@@ -82,6 +82,21 @@
       "type": "function"
     },
     {
+      "constant": true,
+      "inputs": [],
+      "name": "getDownBad",
+      "outputs": [
+        {
+          "internalType": "address payable[]",
+          "name": "",
+          "type": "address[]"
+        }
+      ],
+      "payable": false,
+      "stateMutability": "view",
+      "type": "function"
+    },
+    {
       "constant": false,
       "inputs": [
         {
@@ -97,21 +112,21 @@
       "type": "function"
     }
   ],
-  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_donatorAddr\",\"type\":\"address\"}],\"name\":\"Donation\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address payable[]\",\"name\":\"_downBadAddressesArr\",\"type\":\"address[]\"}],\"name\":\"JoinDownBad\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address payable[]\",\"name\":\"_downBadAddressesArr\",\"type\":\"address[]\"}],\"name\":\"LeftDownBad\",\"type\":\"event\"},{\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"isDownBad\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address payable\",\"name\":\"_downBad\",\"type\":\"address\"}],\"name\":\"joinDownBad\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address payable\",\"name\":\"_downBad\",\"type\":\"address\"}],\"name\":\"removeDownBad\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/DownBad.sol\":\"DownBad\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/DownBad.sol\":{\"keccak256\":\"0x04f9f583a1ea41992ed7328426a5d177a416f4886e0884a5607e0d9d8a41af34\",\"urls\":[\"bzz-raw://0a063457df519398cd86271050ca59c5992c0dfbf8f3f9731d578764975db05d\",\"dweb:/ipfs/QmUXF1KqfqWy7JhJ7sEoRpNvptr6aBXfGo365uh8X7d7Ez\"]}},\"version\":1}",
-  "bytecode": "0x608060405234801561001057600080fd5b50610713806100206000396000f3fe6080604052600436106100345760003560e01c806321aa0ade146101615780634d39bd04146101b2578063c7826f8e14610203575b600080600001805490501461015f57600080600001805490509050600081348161005a57fe5b04905060008090505b828110156100f85760008001818154811061007a57fe5b9060005260206000200160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc839081150290604051600060405180830381858888f193505050501580156100ea573d6000803e3d6000fd5b508080600101915050610063565b507f187f451f92c6a4236353b5331d5fb67bdbfcc66b54367037fba41d6bcef08ce733604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390a150505b005b34801561016d57600080fd5b506101b06004803603602081101561018457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061026c565b005b3480156101be57600080fd5b50610201600480360360208110156101d557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610445565b005b34801561020f57600080fd5b506102526004803603602081101561022657600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610686565b604051808215151515815260200191505060405180910390f35b61027581610686565b61044257600080018190806001815401808255809150509060018203906000526020600020016000909192909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550506001600060010160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff02191690831515021790555060008060000180549050905060018103600060020160008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055507fcf3fe51b22bcda0654f9062dd10086312156ae71ae6e0a725b09fdb3e12df6a1600080016040518080602001828103825283818154815260200191508054801561043257602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190600101908083116103e8575b50509250505060405180910390a1505b50565b61044e81610686565b156106835760008060020160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205490506000806000018054905090506000800160018203815481106104b757fe5b9060005260206000200160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff166000800183815481106104f157fe5b9060005260206000200160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060008001600182038154811061054b57fe5b9060005260206000200160006101000a81549073ffffffffffffffffffffffffffffffffffffffff021916905560008060010160008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055507f9f9e4efee372d36d56c6076497da1a1614f5066cdada0bb924f28548c3a95e61600080016040518080602001828103825283818154815260200191508054801561067257602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019060010190808311610628575b50509250505060405180910390a150505b50565b60008060010160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16905091905056fea265627a7a723158204362797a8c0524bcc5c78578e08140885875c3ba2283fc2a7c234c6d8aa6c08c64736f6c63430005100032",
-  "deployedBytecode": "0x6080604052600436106100345760003560e01c806321aa0ade146101615780634d39bd04146101b2578063c7826f8e14610203575b600080600001805490501461015f57600080600001805490509050600081348161005a57fe5b04905060008090505b828110156100f85760008001818154811061007a57fe5b9060005260206000200160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc839081150290604051600060405180830381858888f193505050501580156100ea573d6000803e3d6000fd5b508080600101915050610063565b507f187f451f92c6a4236353b5331d5fb67bdbfcc66b54367037fba41d6bcef08ce733604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390a150505b005b34801561016d57600080fd5b506101b06004803603602081101561018457600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061026c565b005b3480156101be57600080fd5b50610201600480360360208110156101d557600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610445565b005b34801561020f57600080fd5b506102526004803603602081101561022657600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff169060200190929190505050610686565b604051808215151515815260200191505060405180910390f35b61027581610686565b61044257600080018190806001815401808255809150509060018203906000526020600020016000909192909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550506001600060010160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff02191690831515021790555060008060000180549050905060018103600060020160008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055507fcf3fe51b22bcda0654f9062dd10086312156ae71ae6e0a725b09fdb3e12df6a1600080016040518080602001828103825283818154815260200191508054801561043257602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190600101908083116103e8575b50509250505060405180910390a1505b50565b61044e81610686565b156106835760008060020160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019081526020016000205490506000806000018054905090506000800160018203815481106104b757fe5b9060005260206000200160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff166000800183815481106104f157fe5b9060005260206000200160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff16021790555060008001600182038154811061054b57fe5b9060005260206000200160006101000a81549073ffffffffffffffffffffffffffffffffffffffff021916905560008060010160008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055507f9f9e4efee372d36d56c6076497da1a1614f5066cdada0bb924f28548c3a95e61600080016040518080602001828103825283818154815260200191508054801561067257602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019060010190808311610628575b50509250505060405180910390a150505b50565b60008060010160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16905091905056fea265627a7a723158204362797a8c0524bcc5c78578e08140885875c3ba2283fc2a7c234c6d8aa6c08c64736f6c63430005100032",
-  "sourceMap": "66:1618:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;66:1618:0;;;;;;;",
-  "deployedSourceMap": "66:1618:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;517:1;479:7;:27;;:34;;;;:39;476:282;;524:17;544:7;:27;;:34;;;;524:54;;583:10;608:12;596:9;:24;;;;;;583:37;;630:6;639:1;630:10;;626:97;646:12;642:1;:16;626:97;;;671:7;:27;;699:1;671:30;;;;;;;;;;;;;;;;;;;;;;;;;:39;;:46;711:5;671:46;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;671:46:0;660:3;;;;;;;626:97;;;;733:20;742:10;733:20;;;;;;;;;;;;;;;;;;;;;;476:282;;;66:1618;883:351;;8:9:-1;5:2;;;30:1;27;20:12;5:2;883:351:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;883:351:0;;;;;;;;;;;;;;;;;;;:::i;:::-;;1239:442;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1239:442:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1239:442:0;;;;;;;;;;;;;;;;;;;:::i;:::-;;765:115;;8:9:-1;5:2;;;30:1;27;20:12;5:2;765:115:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;765:115:0;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;883:351;946:19;956:8;946:9;:19::i;:::-;942:289;;972:7;:27;;1005:8;972:42;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;972:42:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1063:4;1019:7;:31;;:41;1051:8;1019:41;;;;;;;;;;;;;;;;:48;;;;;;;;;;;;;;;;;;1072:14;1089:7;:27;;:34;;;;1072:51;;1175:1;1163:9;:13;1128:7;:22;;:32;1151:8;1128:32;;;;;;;;;;;;;;;:48;;;;1186:40;1198:7;:27;;1186:40;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;942:289;;883:351;:::o;1239:442::-;1303:19;1313:8;1303:9;:19::i;:::-;1300:377;;;1329:10;1342:7;:22;;:32;1365:8;1342:32;;;;;;;;;;;;;;;;1329:45;;1379:14;1396:7;:27;;:34;;;;1379:51;;1472:7;:27;;1512:1;1500:9;:13;1472:42;;;;;;;;;;;;;;;;;;;;;;;;;1435:7;:27;;1463:5;1435:34;;;;;;;;;;;;;;;;:79;;;;;;;;;;;;;;;;;;1526:7;:27;;1566:1;1554:9;:13;1526:42;;;;;;;;;;;;;;;;1519:49;;;;;;;;;;;1617:5;1573:7;:31;;:41;1605:8;1573:41;;;;;;;;;;;;;;;;:49;;;;;;;;;;;;;;;;;;1632:40;1644:7;:27;;1632:40;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1300:377;;;1239:442;:::o;765:115::-;820:4;838:7;:31;;:38;870:5;838:38;;;;;;;;;;;;;;;;;;;;;;;;;831:45;;765:115;;;:::o",
-  "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.22 <0.9.0;\n\ncontract DownBad {\n\n\tevent JoinDownBad(address payable[] _downBadAddressesArr);\n\tevent LeftDownBad(address payable[] _downBadAddressesArr);\n\tevent Donation(address _donatorAddr);\n\n\tstruct DownBadManager {\n\t\taddress payable[] downBadAddressesArr;\n\t\tmapping (address => bool)  downBadAddressesPresent;\n\t\tmapping (address => uint)  downBadIndices;\n\t}\n\n\tDownBadManager manager;\n\n\tfunction () external payable {\n\n\t\tif(manager.downBadAddressesArr.length != 0){\n\t\t\tuint numOfDownBad = manager.downBadAddressesArr.length;\n\t\t\tuint split = msg.value / numOfDownBad;\n\n\t\t\tfor(uint i = 0; i < numOfDownBad; i++){\n\n\t\t\t\tmanager.downBadAddressesArr[i].transfer(split);\n\t\t\t}\n\n\t\t\temit Donation(msg.sender);\n\t\t}\n\n\t}\n\n\tfunction isDownBad(address _addr) public view returns (bool) {\n\n\t\treturn manager.downBadAddressesPresent[_addr];\n\t}\n\n\tfunction joinDownBad(address payable _downBad) public {\n\n\t\tif(!isDownBad(_downBad)){\n\n\t\t\tmanager.downBadAddressesArr.push(_downBad);\n\t\t\tmanager.downBadAddressesPresent[_downBad] = true;\n\t\t\tuint arrLength = manager.downBadAddressesArr.length;\n\t\t\tmanager.downBadIndices[_downBad] = arrLength - 1;\n\t\t\temit JoinDownBad(manager.downBadAddressesArr);\n\t\t}\n\t}\n\n\n\n\tfunction removeDownBad(address payable _downBad) public {\n\n\t\tif(isDownBad(_downBad)){\n\n\t\t\tuint index = manager.downBadIndices[_downBad];\n\t\t\tuint arrLength = manager.downBadAddressesArr.length;\n\t\t\tmanager.downBadAddressesArr[index] = manager.downBadAddressesArr[arrLength - 1];\n\t\t\tdelete manager.downBadAddressesArr[arrLength - 1];\n\t\t\tmanager.downBadAddressesPresent[_downBad] = false;\n\t\t\temit LeftDownBad(manager.downBadAddressesArr);\n\t\t}\n\n\t}\n\n}\n",
+  "metadata": "{\"compiler\":{\"version\":\"0.5.16+commit.9c3226ce\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"_donatorAddr\",\"type\":\"address\"}],\"name\":\"Donation\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address payable[]\",\"name\":\"_downBadAddressesArr\",\"type\":\"address[]\"}],\"name\":\"JoinDownBad\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address payable[]\",\"name\":\"_downBadAddressesArr\",\"type\":\"address[]\"}],\"name\":\"LeftDownBad\",\"type\":\"event\"},{\"payable\":true,\"stateMutability\":\"payable\",\"type\":\"fallback\"},{\"constant\":true,\"inputs\":[],\"name\":\"getDownBad\",\"outputs\":[{\"internalType\":\"address payable[]\",\"name\":\"\",\"type\":\"address[]\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":true,\"inputs\":[{\"internalType\":\"address\",\"name\":\"_addr\",\"type\":\"address\"}],\"name\":\"isDownBad\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"payable\":false,\"stateMutability\":\"view\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address payable\",\"name\":\"_downBad\",\"type\":\"address\"}],\"name\":\"joinDownBad\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"},{\"constant\":false,\"inputs\":[{\"internalType\":\"address payable\",\"name\":\"_downBad\",\"type\":\"address\"}],\"name\":\"removeDownBad\",\"outputs\":[],\"payable\":false,\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"methods\":{}},\"userdoc\":{\"methods\":{}}},\"settings\":{\"compilationTarget\":{\"project:/contracts/DownBad.sol\":\"DownBad\"},\"evmVersion\":\"istanbul\",\"libraries\":{},\"optimizer\":{\"enabled\":false,\"runs\":200},\"remappings\":[]},\"sources\":{\"project:/contracts/DownBad.sol\":{\"keccak256\":\"0xb3c7a59d862cb574b1358db87d2a6d4ef665bc6d318c6ee57378061cc4a6d536\",\"urls\":[\"bzz-raw://098d89c975529209f48e8721394f3a26d8135b0addaefc4ba4c3157d5b4576a3\",\"dweb:/ipfs/QmcPDEBSC3wYM8KbbdsahTY7RioCs6xDES7mhMkYVsNCFD\"]}},\"version\":1}",
+  "bytecode": "0x608060405234801561001057600080fd5b5061081a806100206000396000f3fe60806040526004361061003f5760003560e01c806321aa0ade1461016c5780634d39bd04146101bd5780635d3d27991461020e578063c7826f8e1461027a575b600080600001805490501461016a57600080600001805490509050600081348161006557fe5b04905060008090505b828110156101035760008001818154811061008557fe5b9060005260206000200160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc839081150290604051600060405180830381858888f193505050501580156100f5573d6000803e3d6000fd5b50808060010191505061006e565b507f187f451f92c6a4236353b5331d5fb67bdbfcc66b54367037fba41d6bcef08ce733604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390a150505b005b34801561017857600080fd5b506101bb6004803603602081101561018f57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506102e3565b005b3480156101c957600080fd5b5061020c600480360360208110156101e057600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506104bc565b005b34801561021a57600080fd5b506102236106fd565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b8381101561026657808201518184015260208101905061024b565b505050509050019250505060405180910390f35b34801561028657600080fd5b506102c96004803603602081101561029d57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061078d565b604051808215151515815260200191505060405180910390f35b6102ec8161078d565b6104b957600080018190806001815401808255809150509060018203906000526020600020016000909192909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550506001600060010160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff02191690831515021790555060008060000180549050905060018103600060020160008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055507fcf3fe51b22bcda0654f9062dd10086312156ae71ae6e0a725b09fdb3e12df6a160008001604051808060200182810382528381815481526020019150805480156104a957602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001906001019080831161045f575b50509250505060405180910390a1505b50565b6104c58161078d565b156106fa5760008060020160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905060008060000180549050905060008001600182038154811061052e57fe5b9060005260206000200160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1660008001838154811061056857fe5b9060005260206000200160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506000800160018203815481106105c257fe5b9060005260206000200160006101000a81549073ffffffffffffffffffffffffffffffffffffffff021916905560008060010160008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055507f9f9e4efee372d36d56c6076497da1a1614f5066cdada0bb924f28548c3a95e6160008001604051808060200182810382528381815481526020019150805480156106e957602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001906001019080831161069f575b50509250505060405180910390a150505b50565b60606000800180548060200260200160405190810160405280929190818152602001828054801561078357602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019060010190808311610739575b5050505050905090565b60008060010160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16905091905056fea265627a7a72315820c784653e353f672b6d9c078043b593e0bba3448e7315e862e3693f0411b38e1364736f6c63430005100032",
+  "deployedBytecode": "0x60806040526004361061003f5760003560e01c806321aa0ade1461016c5780634d39bd04146101bd5780635d3d27991461020e578063c7826f8e1461027a575b600080600001805490501461016a57600080600001805490509050600081348161006557fe5b04905060008090505b828110156101035760008001818154811061008557fe5b9060005260206000200160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff166108fc839081150290604051600060405180830381858888f193505050501580156100f5573d6000803e3d6000fd5b50808060010191505061006e565b507f187f451f92c6a4236353b5331d5fb67bdbfcc66b54367037fba41d6bcef08ce733604051808273ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200191505060405180910390a150505b005b34801561017857600080fd5b506101bb6004803603602081101561018f57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506102e3565b005b3480156101c957600080fd5b5061020c600480360360208110156101e057600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff1690602001909291905050506104bc565b005b34801561021a57600080fd5b506102236106fd565b6040518080602001828103825283818151815260200191508051906020019060200280838360005b8381101561026657808201518184015260208101905061024b565b505050509050019250505060405180910390f35b34801561028657600080fd5b506102c96004803603602081101561029d57600080fd5b81019080803573ffffffffffffffffffffffffffffffffffffffff16906020019092919050505061078d565b604051808215151515815260200191505060405180910390f35b6102ec8161078d565b6104b957600080018190806001815401808255809150509060018203906000526020600020016000909192909190916101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff160217905550506001600060010160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff02191690831515021790555060008060000180549050905060018103600060020160008473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001908152602001600020819055507fcf3fe51b22bcda0654f9062dd10086312156ae71ae6e0a725b09fdb3e12df6a160008001604051808060200182810382528381815481526020019150805480156104a957602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001906001019080831161045f575b50509250505060405180910390a1505b50565b6104c58161078d565b156106fa5760008060020160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002054905060008060000180549050905060008001600182038154811061052e57fe5b9060005260206000200160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1660008001838154811061056857fe5b9060005260206000200160006101000a81548173ffffffffffffffffffffffffffffffffffffffff021916908373ffffffffffffffffffffffffffffffffffffffff1602179055506000800160018203815481106105c257fe5b9060005260206000200160006101000a81549073ffffffffffffffffffffffffffffffffffffffff021916905560008060010160008573ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060006101000a81548160ff0219169083151502179055507f9f9e4efee372d36d56c6076497da1a1614f5066cdada0bb924f28548c3a95e6160008001604051808060200182810382528381815481526020019150805480156106e957602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff168152602001906001019080831161069f575b50509250505060405180910390a150505b50565b60606000800180548060200260200160405190810160405280929190818152602001828054801561078357602002820191906000526020600020905b8160009054906101000a900473ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff1681526020019060010190808311610739575b5050505050905090565b60008060010160008373ffffffffffffffffffffffffffffffffffffffff1673ffffffffffffffffffffffffffffffffffffffff16815260200190815260200160002060009054906101000a900460ff16905091905056fea265627a7a72315820c784653e353f672b6d9c078043b593e0bba3448e7315e862e3693f0411b38e1364736f6c63430005100032",
+  "sourceMap": "66:1732:0:-;;;;8:9:-1;5:2;;;30:1;27;20:12;5:2;66:1732:0;;;;;;;",
+  "deployedSourceMap": "66:1732:0:-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;517:1;479:7;:27;;:34;;;;:39;476:282;;524:17;544:7;:27;;:34;;;;524:54;;583:10;608:12;596:9;:24;;;;;;583:37;;630:6;639:1;630:10;;626:97;646:12;642:1;:16;626:97;;;671:7;:27;;699:1;671:30;;;;;;;;;;;;;;;;;;;;;;;;;:39;;:46;711:5;671:46;;;;;;;;;;;;;;;;;;;;;;;;8:9:-1;5:2;;;45:16;42:1;39;24:38;77:16;74:1;67:27;5:2;671:46:0;660:3;;;;;;;626:97;;;;733:20;742:10;733:20;;;;;;;;;;;;;;;;;;;;;;476:282;;;66:1732;883:351;;8:9:-1;5:2;;;30:1;27;20:12;5:2;883:351:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;883:351:0;;;;;;;;;;;;;;;;;;;:::i;:::-;;1353:442;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1353:442:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;1353:442:0;;;;;;;;;;;;;;;;;;;:::i;:::-;;1238:112;;8:9:-1;5:2;;;30:1;27;20:12;5:2;1238:112:0;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;23:1:-1;8:100;33:3;30:1;27:10;8:100;;;99:1;94:3;90:11;84:18;80:1;75:3;71:11;64:39;52:2;49:1;45:10;40:15;;8:100;;;12:14;1238:112:0;;;;;;;;;;;;;;;;;765:115;;8:9:-1;5:2;;;30:1;27;20:12;5:2;765:115:0;;;;;;13:2:-1;8:3;5:11;2:2;;;29:1;26;19:12;2:2;765:115:0;;;;;;;;;;;;;;;;;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;883:351;946:19;956:8;946:9;:19::i;:::-;942:289;;972:7;:27;;1005:8;972:42;;39:1:-1;33:3;27:10;23:18;57:10;52:3;45:23;79:10;72:17;;0:93;972:42:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1063:4;1019:7;:31;;:41;1051:8;1019:41;;;;;;;;;;;;;;;;:48;;;;;;;;;;;;;;;;;;1072:14;1089:7;:27;;:34;;;;1072:51;;1175:1;1163:9;:13;1128:7;:22;;:32;1151:8;1128:32;;;;;;;;;;;;;;;:48;;;;1186:40;1198:7;:27;;1186:40;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;942:289;;883:351;:::o;1353:442::-;1417:19;1427:8;1417:9;:19::i;:::-;1414:377;;;1443:10;1456:7;:22;;:32;1479:8;1456:32;;;;;;;;;;;;;;;;1443:45;;1493:14;1510:7;:27;;:34;;;;1493:51;;1586:7;:27;;1626:1;1614:9;:13;1586:42;;;;;;;;;;;;;;;;;;;;;;;;;1549:7;:27;;1577:5;1549:34;;;;;;;;;;;;;;;;:79;;;;;;;;;;;;;;;;;;1640:7;:27;;1680:1;1668:9;:13;1640:42;;;;;;;;;;;;;;;;1633:49;;;;;;;;;;;1731:5;1687:7;:31;;:41;1719:8;1687:41;;;;;;;;;;;;;;;;:49;;;;;;;;;;;;;;;;;;1746:40;1758:7;:27;;1746:40;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1414:377;;;1353:442;:::o;1238:112::-;1281:24;1319:7;:27;;1312:34;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1238:112;:::o;765:115::-;820:4;838:7;:31;;:38;870:5;838:38;;;;;;;;;;;;;;;;;;;;;;;;;831:45;;765:115;;;:::o",
+  "source": "// SPDX-License-Identifier: MIT\npragma solidity >=0.4.22 <0.9.0;\n\ncontract DownBad {\n\n\tevent JoinDownBad(address payable[] _downBadAddressesArr);\n\tevent LeftDownBad(address payable[] _downBadAddressesArr);\n\tevent Donation(address _donatorAddr);\n\n\tstruct DownBadManager {\n\t\taddress payable[] downBadAddressesArr;\n\t\tmapping (address => bool)  downBadAddressesPresent;\n\t\tmapping (address => uint)  downBadIndices;\n\t}\n\n\tDownBadManager manager;\n\n\tfunction () external payable {\n\n\t\tif(manager.downBadAddressesArr.length != 0){\n\t\t\tuint numOfDownBad = manager.downBadAddressesArr.length;\n\t\t\tuint split = msg.value / numOfDownBad;\n\n\t\t\tfor(uint i = 0; i < numOfDownBad; i++){\n\n\t\t\t\tmanager.downBadAddressesArr[i].transfer(split);\n\t\t\t}\n\n\t\t\temit Donation(msg.sender);\n\t\t}\n\n\t}\n\n\tfunction isDownBad(address _addr) public view returns (bool) {\n\n\t\treturn manager.downBadAddressesPresent[_addr];\n\t}\n\n\tfunction joinDownBad(address payable _downBad) public {\n\n\t\tif(!isDownBad(_downBad)){\n\n\t\t\tmanager.downBadAddressesArr.push(_downBad);\n\t\t\tmanager.downBadAddressesPresent[_downBad] = true;\n\t\t\tuint arrLength = manager.downBadAddressesArr.length;\n\t\t\tmanager.downBadIndices[_downBad] = arrLength - 1;\n\t\t\temit JoinDownBad(manager.downBadAddressesArr);\n\t\t}\n\t}\n\n\n\tfunction getDownBad() public view returns (address payable[] memory) {\n\n\t\treturn manager.downBadAddressesArr;\n\t}\n\n\tfunction removeDownBad(address payable _downBad) public {\n\n\t\tif(isDownBad(_downBad)){\n\n\t\t\tuint index = manager.downBadIndices[_downBad];\n\t\t\tuint arrLength = manager.downBadAddressesArr.length;\n\t\t\tmanager.downBadAddressesArr[index] = manager.downBadAddressesArr[arrLength - 1];\n\t\t\tdelete manager.downBadAddressesArr[arrLength - 1];\n\t\t\tmanager.downBadAddressesPresent[_downBad] = false;\n\t\t\temit LeftDownBad(manager.downBadAddressesArr);\n\t\t}\n\n\t}\n\n}\n",
   "sourcePath": "/Users/odellblackmoniii/Projects/DownBad/contracts/DownBad.sol",
   "ast": {
     "absolutePath": "project:/contracts/DownBad.sol",
     "exportedSymbols": {
       "DownBad": [
-        200
+        210
       ]
     },
-    "id": 201,
+    "id": 211,
     "nodeType": "SourceUnit",
     "nodes": [
       {
@@ -134,9 +149,9 @@
         "contractKind": "contract",
         "documentation": null,
         "fullyImplemented": true,
-        "id": 200,
+        "id": 210,
         "linearizedBaseContracts": [
-          200
+          210
         ],
         "name": "DownBad",
         "nodeType": "ContractDefinition",
@@ -424,7 +439,7 @@
             ],
             "name": "DownBadManager",
             "nodeType": "StructDefinition",
-            "scope": 200,
+            "scope": 210,
             "src": "247:166:0",
             "visibility": "public"
           },
@@ -433,7 +448,7 @@
             "id": 29,
             "name": "manager",
             "nodeType": "VariableDeclaration",
-            "scope": 200,
+            "scope": 210,
             "src": "416:22:0",
             "stateVariable": true,
             "storageLocation": "default",
@@ -687,7 +702,7 @@
                               "name": "msg",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 215,
+                              "referencedDeclaration": 225,
                               "src": "596:3:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_magic_message",
@@ -1002,7 +1017,7 @@
                                 "name": "msg",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 215,
+                                "referencedDeclaration": 225,
                                 "src": "742:3:0",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_magic_message",
@@ -1084,7 +1099,7 @@
               "parameters": [],
               "src": "471:0:0"
             },
-            "scope": 200,
+            "scope": 210,
             "src": "442:320:0",
             "stateMutability": "payable",
             "superFunction": null,
@@ -1234,7 +1249,7 @@
               ],
               "src": "819:6:0"
             },
-            "scope": 200,
+            "scope": 210,
             "src": "765:115:0",
             "stateMutability": "view",
             "superFunction": null,
@@ -1830,7 +1845,7 @@
               "parameters": [],
               "src": "937:0:0"
             },
-            "scope": 200,
+            "scope": 210,
             "src": "883:351:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
@@ -1838,9 +1853,115 @@
           },
           {
             "body": {
-              "id": 198,
+              "id": 150,
               "nodeType": "Block",
-              "src": "1295:386:0",
+              "src": "1307:43:0",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "expression": {
+                      "argumentTypes": null,
+                      "id": 147,
+                      "name": "manager",
+                      "nodeType": "Identifier",
+                      "overloadedDeclarations": [],
+                      "referencedDeclaration": 29,
+                      "src": "1319:7:0",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_struct$_DownBadManager_$27_storage",
+                        "typeString": "struct DownBad.DownBadManager storage ref"
+                      }
+                    },
+                    "id": 148,
+                    "isConstant": false,
+                    "isLValue": true,
+                    "isPure": false,
+                    "lValueRequested": false,
+                    "memberName": "downBadAddressesArr",
+                    "nodeType": "MemberAccess",
+                    "referencedDeclaration": 18,
+                    "src": "1319:27:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_payable_$dyn_storage",
+                      "typeString": "address payable[] storage ref"
+                    }
+                  },
+                  "functionReturnParameters": 146,
+                  "id": 149,
+                  "nodeType": "Return",
+                  "src": "1312:34:0"
+                }
+              ]
+            },
+            "documentation": null,
+            "id": 151,
+            "implemented": true,
+            "kind": "function",
+            "modifiers": [],
+            "name": "getDownBad",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 142,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "1257:2:0"
+            },
+            "returnParameters": {
+              "id": 146,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 145,
+                  "name": "",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 151,
+                  "src": "1281:24:0",
+                  "stateVariable": false,
+                  "storageLocation": "memory",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_array$_t_address_payable_$dyn_memory_ptr",
+                    "typeString": "address payable[]"
+                  },
+                  "typeName": {
+                    "baseType": {
+                      "id": 143,
+                      "name": "address",
+                      "nodeType": "ElementaryTypeName",
+                      "src": "1281:15:0",
+                      "stateMutability": "payable",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_address_payable",
+                        "typeString": "address payable"
+                      }
+                    },
+                    "id": 144,
+                    "length": null,
+                    "nodeType": "ArrayTypeName",
+                    "src": "1281:17:0",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_array$_t_address_payable_$dyn_storage_ptr",
+                      "typeString": "address payable[]"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "1280:26:0"
+            },
+            "scope": 210,
+            "src": "1238:112:0",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "public"
+          },
+          {
+            "body": {
+              "id": 208,
+              "nodeType": "Block",
+              "src": "1409:386:0",
               "statements": [
                 {
                   "condition": {
@@ -1848,12 +1969,12 @@
                     "arguments": [
                       {
                         "argumentTypes": null,
-                        "id": 147,
+                        "id": 157,
                         "name": "_downBad",
                         "nodeType": "Identifier",
                         "overloadedDeclarations": [],
-                        "referencedDeclaration": 143,
-                        "src": "1313:8:0",
+                        "referencedDeclaration": 153,
+                        "src": "1427:8:0",
                         "typeDescriptions": {
                           "typeIdentifier": "t_address_payable",
                           "typeString": "address payable"
@@ -1867,18 +1988,18 @@
                           "typeString": "address payable"
                         }
                       ],
-                      "id": 146,
+                      "id": 156,
                       "name": "isDownBad",
                       "nodeType": "Identifier",
                       "overloadedDeclarations": [],
                       "referencedDeclaration": 92,
-                      "src": "1303:9:0",
+                      "src": "1417:9:0",
                       "typeDescriptions": {
                         "typeIdentifier": "t_function_internal_view$_t_address_$returns$_t_bool_$",
                         "typeString": "function (address) view returns (bool)"
                       }
                     },
-                    "id": 148,
+                    "id": 158,
                     "isConstant": false,
                     "isLValue": false,
                     "isPure": false,
@@ -1886,33 +2007,33 @@
                     "lValueRequested": false,
                     "names": [],
                     "nodeType": "FunctionCall",
-                    "src": "1303:19:0",
+                    "src": "1417:19:0",
                     "typeDescriptions": {
                       "typeIdentifier": "t_bool",
                       "typeString": "bool"
                     }
                   },
                   "falseBody": null,
-                  "id": 197,
+                  "id": 207,
                   "nodeType": "IfStatement",
-                  "src": "1300:377:0",
+                  "src": "1414:377:0",
                   "trueBody": {
-                    "id": 196,
+                    "id": 206,
                     "nodeType": "Block",
-                    "src": "1323:354:0",
+                    "src": "1437:354:0",
                     "statements": [
                       {
                         "assignments": [
-                          150
+                          160
                         ],
                         "declarations": [
                           {
                             "constant": false,
-                            "id": 150,
+                            "id": 160,
                             "name": "index",
                             "nodeType": "VariableDeclaration",
-                            "scope": 196,
-                            "src": "1329:10:0",
+                            "scope": 206,
+                            "src": "1443:10:0",
                             "stateVariable": false,
                             "storageLocation": "default",
                             "typeDescriptions": {
@@ -1920,10 +2041,10 @@
                               "typeString": "uint256"
                             },
                             "typeName": {
-                              "id": 149,
+                              "id": 159,
                               "name": "uint",
                               "nodeType": "ElementaryTypeName",
-                              "src": "1329:4:0",
+                              "src": "1443:4:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -1933,25 +2054,25 @@
                             "visibility": "internal"
                           }
                         ],
-                        "id": 155,
+                        "id": 165,
                         "initialValue": {
                           "argumentTypes": null,
                           "baseExpression": {
                             "argumentTypes": null,
                             "expression": {
                               "argumentTypes": null,
-                              "id": 151,
+                              "id": 161,
                               "name": "manager",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
                               "referencedDeclaration": 29,
-                              "src": "1342:7:0",
+                              "src": "1456:7:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_struct$_DownBadManager_$27_storage",
                                 "typeString": "struct DownBad.DownBadManager storage ref"
                               }
                             },
-                            "id": 152,
+                            "id": 162,
                             "isConstant": false,
                             "isLValue": true,
                             "isPure": false,
@@ -1959,21 +2080,21 @@
                             "memberName": "downBadIndices",
                             "nodeType": "MemberAccess",
                             "referencedDeclaration": 26,
-                            "src": "1342:22:0",
+                            "src": "1456:22:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_mapping$_t_address_$_t_uint256_$",
                               "typeString": "mapping(address => uint256)"
                             }
                           },
-                          "id": 154,
+                          "id": 164,
                           "indexExpression": {
                             "argumentTypes": null,
-                            "id": 153,
+                            "id": 163,
                             "name": "_downBad",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
-                            "referencedDeclaration": 143,
-                            "src": "1365:8:0",
+                            "referencedDeclaration": 153,
+                            "src": "1479:8:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address_payable",
                               "typeString": "address payable"
@@ -1984,27 +2105,27 @@
                           "isPure": false,
                           "lValueRequested": false,
                           "nodeType": "IndexAccess",
-                          "src": "1342:32:0",
+                          "src": "1456:32:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
                         "nodeType": "VariableDeclarationStatement",
-                        "src": "1329:45:0"
+                        "src": "1443:45:0"
                       },
                       {
                         "assignments": [
-                          157
+                          167
                         ],
                         "declarations": [
                           {
                             "constant": false,
-                            "id": 157,
+                            "id": 167,
                             "name": "arrLength",
                             "nodeType": "VariableDeclaration",
-                            "scope": 196,
-                            "src": "1379:14:0",
+                            "scope": 206,
+                            "src": "1493:14:0",
                             "stateVariable": false,
                             "storageLocation": "default",
                             "typeDescriptions": {
@@ -2012,10 +2133,10 @@
                               "typeString": "uint256"
                             },
                             "typeName": {
-                              "id": 156,
+                              "id": 166,
                               "name": "uint",
                               "nodeType": "ElementaryTypeName",
-                              "src": "1379:4:0",
+                              "src": "1493:4:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -2025,25 +2146,25 @@
                             "visibility": "internal"
                           }
                         ],
-                        "id": 161,
+                        "id": 171,
                         "initialValue": {
                           "argumentTypes": null,
                           "expression": {
                             "argumentTypes": null,
                             "expression": {
                               "argumentTypes": null,
-                              "id": 158,
+                              "id": 168,
                               "name": "manager",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
                               "referencedDeclaration": 29,
-                              "src": "1396:7:0",
+                              "src": "1510:7:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_struct$_DownBadManager_$27_storage",
                                 "typeString": "struct DownBad.DownBadManager storage ref"
                               }
                             },
-                            "id": 159,
+                            "id": 169,
                             "isConstant": false,
                             "isLValue": true,
                             "isPure": false,
@@ -2051,13 +2172,13 @@
                             "memberName": "downBadAddressesArr",
                             "nodeType": "MemberAccess",
                             "referencedDeclaration": 18,
-                            "src": "1396:27:0",
+                            "src": "1510:27:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_array$_t_address_payable_$dyn_storage",
                               "typeString": "address payable[] storage ref"
                             }
                           },
-                          "id": 160,
+                          "id": 170,
                           "isConstant": false,
                           "isLValue": true,
                           "isPure": false,
@@ -2065,19 +2186,19 @@
                           "memberName": "length",
                           "nodeType": "MemberAccess",
                           "referencedDeclaration": null,
-                          "src": "1396:34:0",
+                          "src": "1510:34:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_uint256",
                             "typeString": "uint256"
                           }
                         },
                         "nodeType": "VariableDeclarationStatement",
-                        "src": "1379:51:0"
+                        "src": "1493:51:0"
                       },
                       {
                         "expression": {
                           "argumentTypes": null,
-                          "id": 173,
+                          "id": 183,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -2088,18 +2209,18 @@
                               "argumentTypes": null,
                               "expression": {
                                 "argumentTypes": null,
-                                "id": 162,
+                                "id": 172,
                                 "name": "manager",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": 29,
-                                "src": "1435:7:0",
+                                "src": "1549:7:0",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_struct$_DownBadManager_$27_storage",
                                   "typeString": "struct DownBad.DownBadManager storage ref"
                                 }
                               },
-                              "id": 165,
+                              "id": 175,
                               "isConstant": false,
                               "isLValue": true,
                               "isPure": false,
@@ -2107,21 +2228,21 @@
                               "memberName": "downBadAddressesArr",
                               "nodeType": "MemberAccess",
                               "referencedDeclaration": 18,
-                              "src": "1435:27:0",
+                              "src": "1549:27:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_array$_t_address_payable_$dyn_storage",
                                 "typeString": "address payable[] storage ref"
                               }
                             },
-                            "id": 166,
+                            "id": 176,
                             "indexExpression": {
                               "argumentTypes": null,
-                              "id": 164,
+                              "id": 174,
                               "name": "index",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 150,
-                              "src": "1463:5:0",
+                              "referencedDeclaration": 160,
+                              "src": "1577:5:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -2132,7 +2253,7 @@
                             "isPure": false,
                             "lValueRequested": true,
                             "nodeType": "IndexAccess",
-                            "src": "1435:34:0",
+                            "src": "1549:34:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address_payable",
                               "typeString": "address payable"
@@ -2146,18 +2267,18 @@
                               "argumentTypes": null,
                               "expression": {
                                 "argumentTypes": null,
-                                "id": 167,
+                                "id": 177,
                                 "name": "manager",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": 29,
-                                "src": "1472:7:0",
+                                "src": "1586:7:0",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_struct$_DownBadManager_$27_storage",
                                   "typeString": "struct DownBad.DownBadManager storage ref"
                                 }
                               },
-                              "id": 168,
+                              "id": 178,
                               "isConstant": false,
                               "isLValue": true,
                               "isPure": false,
@@ -2165,32 +2286,32 @@
                               "memberName": "downBadAddressesArr",
                               "nodeType": "MemberAccess",
                               "referencedDeclaration": 18,
-                              "src": "1472:27:0",
+                              "src": "1586:27:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_array$_t_address_payable_$dyn_storage",
                                 "typeString": "address payable[] storage ref"
                               }
                             },
-                            "id": 172,
+                            "id": 182,
                             "indexExpression": {
                               "argumentTypes": null,
                               "commonType": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
                               },
-                              "id": 171,
+                              "id": 181,
                               "isConstant": false,
                               "isLValue": false,
                               "isPure": false,
                               "lValueRequested": false,
                               "leftExpression": {
                                 "argumentTypes": null,
-                                "id": 169,
+                                "id": 179,
                                 "name": "arrLength",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
-                                "referencedDeclaration": 157,
-                                "src": "1500:9:0",
+                                "referencedDeclaration": 167,
+                                "src": "1614:9:0",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_uint256",
                                   "typeString": "uint256"
@@ -2201,14 +2322,14 @@
                               "rightExpression": {
                                 "argumentTypes": null,
                                 "hexValue": "31",
-                                "id": 170,
+                                "id": 180,
                                 "isConstant": false,
                                 "isLValue": false,
                                 "isPure": true,
                                 "kind": "number",
                                 "lValueRequested": false,
                                 "nodeType": "Literal",
-                                "src": "1512:1:0",
+                                "src": "1626:1:0",
                                 "subdenomination": null,
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_rational_1_by_1",
@@ -2216,7 +2337,7 @@
                                 },
                                 "value": "1"
                               },
-                              "src": "1500:13:0",
+                              "src": "1614:13:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_uint256",
                                 "typeString": "uint256"
@@ -2227,26 +2348,26 @@
                             "isPure": false,
                             "lValueRequested": false,
                             "nodeType": "IndexAccess",
-                            "src": "1472:42:0",
+                            "src": "1586:42:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_address_payable",
                               "typeString": "address payable"
                             }
                           },
-                          "src": "1435:79:0",
+                          "src": "1549:79:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_address_payable",
                             "typeString": "address payable"
                           }
                         },
-                        "id": 174,
+                        "id": 184,
                         "nodeType": "ExpressionStatement",
-                        "src": "1435:79:0"
+                        "src": "1549:79:0"
                       },
                       {
                         "expression": {
                           "argumentTypes": null,
-                          "id": 181,
+                          "id": 191,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -2254,129 +2375,19 @@
                           "nodeType": "UnaryOperation",
                           "operator": "delete",
                           "prefix": true,
-                          "src": "1519:49:0",
+                          "src": "1633:49:0",
                           "subExpression": {
                             "argumentTypes": null,
                             "baseExpression": {
                               "argumentTypes": null,
                               "expression": {
                                 "argumentTypes": null,
-                                "id": 175,
+                                "id": 185,
                                 "name": "manager",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": 29,
-                                "src": "1526:7:0",
-                                "typeDescriptions": {
-                                  "typeIdentifier": "t_struct$_DownBadManager_$27_storage",
-                                  "typeString": "struct DownBad.DownBadManager storage ref"
-                                }
-                              },
-                              "id": 176,
-                              "isConstant": false,
-                              "isLValue": true,
-                              "isPure": false,
-                              "lValueRequested": false,
-                              "memberName": "downBadAddressesArr",
-                              "nodeType": "MemberAccess",
-                              "referencedDeclaration": 18,
-                              "src": "1526:27:0",
-                              "typeDescriptions": {
-                                "typeIdentifier": "t_array$_t_address_payable_$dyn_storage",
-                                "typeString": "address payable[] storage ref"
-                              }
-                            },
-                            "id": 180,
-                            "indexExpression": {
-                              "argumentTypes": null,
-                              "commonType": {
-                                "typeIdentifier": "t_uint256",
-                                "typeString": "uint256"
-                              },
-                              "id": 179,
-                              "isConstant": false,
-                              "isLValue": false,
-                              "isPure": false,
-                              "lValueRequested": false,
-                              "leftExpression": {
-                                "argumentTypes": null,
-                                "id": 177,
-                                "name": "arrLength",
-                                "nodeType": "Identifier",
-                                "overloadedDeclarations": [],
-                                "referencedDeclaration": 157,
-                                "src": "1554:9:0",
-                                "typeDescriptions": {
-                                  "typeIdentifier": "t_uint256",
-                                  "typeString": "uint256"
-                                }
-                              },
-                              "nodeType": "BinaryOperation",
-                              "operator": "-",
-                              "rightExpression": {
-                                "argumentTypes": null,
-                                "hexValue": "31",
-                                "id": 178,
-                                "isConstant": false,
-                                "isLValue": false,
-                                "isPure": true,
-                                "kind": "number",
-                                "lValueRequested": false,
-                                "nodeType": "Literal",
-                                "src": "1566:1:0",
-                                "subdenomination": null,
-                                "typeDescriptions": {
-                                  "typeIdentifier": "t_rational_1_by_1",
-                                  "typeString": "int_const 1"
-                                },
-                                "value": "1"
-                              },
-                              "src": "1554:13:0",
-                              "typeDescriptions": {
-                                "typeIdentifier": "t_uint256",
-                                "typeString": "uint256"
-                              }
-                            },
-                            "isConstant": false,
-                            "isLValue": true,
-                            "isPure": false,
-                            "lValueRequested": true,
-                            "nodeType": "IndexAccess",
-                            "src": "1526:42:0",
-                            "typeDescriptions": {
-                              "typeIdentifier": "t_address_payable",
-                              "typeString": "address payable"
-                            }
-                          },
-                          "typeDescriptions": {
-                            "typeIdentifier": "t_tuple$__$",
-                            "typeString": "tuple()"
-                          }
-                        },
-                        "id": 182,
-                        "nodeType": "ExpressionStatement",
-                        "src": "1519:49:0"
-                      },
-                      {
-                        "expression": {
-                          "argumentTypes": null,
-                          "id": 189,
-                          "isConstant": false,
-                          "isLValue": false,
-                          "isPure": false,
-                          "lValueRequested": false,
-                          "leftHandSide": {
-                            "argumentTypes": null,
-                            "baseExpression": {
-                              "argumentTypes": null,
-                              "expression": {
-                                "argumentTypes": null,
-                                "id": 183,
-                                "name": "manager",
-                                "nodeType": "Identifier",
-                                "overloadedDeclarations": [],
-                                "referencedDeclaration": 29,
-                                "src": "1573:7:0",
+                                "src": "1640:7:0",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_struct$_DownBadManager_$27_storage",
                                   "typeString": "struct DownBad.DownBadManager storage ref"
@@ -2387,24 +2398,134 @@
                               "isLValue": true,
                               "isPure": false,
                               "lValueRequested": false,
+                              "memberName": "downBadAddressesArr",
+                              "nodeType": "MemberAccess",
+                              "referencedDeclaration": 18,
+                              "src": "1640:27:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_array$_t_address_payable_$dyn_storage",
+                                "typeString": "address payable[] storage ref"
+                              }
+                            },
+                            "id": 190,
+                            "indexExpression": {
+                              "argumentTypes": null,
+                              "commonType": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              },
+                              "id": 189,
+                              "isConstant": false,
+                              "isLValue": false,
+                              "isPure": false,
+                              "lValueRequested": false,
+                              "leftExpression": {
+                                "argumentTypes": null,
+                                "id": 187,
+                                "name": "arrLength",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 167,
+                                "src": "1668:9:0",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_uint256",
+                                  "typeString": "uint256"
+                                }
+                              },
+                              "nodeType": "BinaryOperation",
+                              "operator": "-",
+                              "rightExpression": {
+                                "argumentTypes": null,
+                                "hexValue": "31",
+                                "id": 188,
+                                "isConstant": false,
+                                "isLValue": false,
+                                "isPure": true,
+                                "kind": "number",
+                                "lValueRequested": false,
+                                "nodeType": "Literal",
+                                "src": "1680:1:0",
+                                "subdenomination": null,
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_rational_1_by_1",
+                                  "typeString": "int_const 1"
+                                },
+                                "value": "1"
+                              },
+                              "src": "1668:13:0",
+                              "typeDescriptions": {
+                                "typeIdentifier": "t_uint256",
+                                "typeString": "uint256"
+                              }
+                            },
+                            "isConstant": false,
+                            "isLValue": true,
+                            "isPure": false,
+                            "lValueRequested": true,
+                            "nodeType": "IndexAccess",
+                            "src": "1640:42:0",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address_payable",
+                              "typeString": "address payable"
+                            }
+                          },
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_tuple$__$",
+                            "typeString": "tuple()"
+                          }
+                        },
+                        "id": 192,
+                        "nodeType": "ExpressionStatement",
+                        "src": "1633:49:0"
+                      },
+                      {
+                        "expression": {
+                          "argumentTypes": null,
+                          "id": 199,
+                          "isConstant": false,
+                          "isLValue": false,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "leftHandSide": {
+                            "argumentTypes": null,
+                            "baseExpression": {
+                              "argumentTypes": null,
+                              "expression": {
+                                "argumentTypes": null,
+                                "id": 193,
+                                "name": "manager",
+                                "nodeType": "Identifier",
+                                "overloadedDeclarations": [],
+                                "referencedDeclaration": 29,
+                                "src": "1687:7:0",
+                                "typeDescriptions": {
+                                  "typeIdentifier": "t_struct$_DownBadManager_$27_storage",
+                                  "typeString": "struct DownBad.DownBadManager storage ref"
+                                }
+                              },
+                              "id": 196,
+                              "isConstant": false,
+                              "isLValue": true,
+                              "isPure": false,
+                              "lValueRequested": false,
                               "memberName": "downBadAddressesPresent",
                               "nodeType": "MemberAccess",
                               "referencedDeclaration": 22,
-                              "src": "1573:31:0",
+                              "src": "1687:31:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_mapping$_t_address_$_t_bool_$",
                                 "typeString": "mapping(address => bool)"
                               }
                             },
-                            "id": 187,
+                            "id": 197,
                             "indexExpression": {
                               "argumentTypes": null,
-                              "id": 185,
+                              "id": 195,
                               "name": "_downBad",
                               "nodeType": "Identifier",
                               "overloadedDeclarations": [],
-                              "referencedDeclaration": 143,
-                              "src": "1605:8:0",
+                              "referencedDeclaration": 153,
+                              "src": "1719:8:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_address_payable",
                                 "typeString": "address payable"
@@ -2415,7 +2536,7 @@
                             "isPure": false,
                             "lValueRequested": true,
                             "nodeType": "IndexAccess",
-                            "src": "1573:41:0",
+                            "src": "1687:41:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
                               "typeString": "bool"
@@ -2426,14 +2547,14 @@
                           "rightHandSide": {
                             "argumentTypes": null,
                             "hexValue": "66616c7365",
-                            "id": 188,
+                            "id": 198,
                             "isConstant": false,
                             "isLValue": false,
                             "isPure": true,
                             "kind": "bool",
                             "lValueRequested": false,
                             "nodeType": "Literal",
-                            "src": "1617:5:0",
+                            "src": "1731:5:0",
                             "subdenomination": null,
                             "typeDescriptions": {
                               "typeIdentifier": "t_bool",
@@ -2441,15 +2562,15 @@
                             },
                             "value": "false"
                           },
-                          "src": "1573:49:0",
+                          "src": "1687:49:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_bool",
                             "typeString": "bool"
                           }
                         },
-                        "id": 190,
+                        "id": 200,
                         "nodeType": "ExpressionStatement",
-                        "src": "1573:49:0"
+                        "src": "1687:49:0"
                       },
                       {
                         "eventCall": {
@@ -2459,18 +2580,18 @@
                               "argumentTypes": null,
                               "expression": {
                                 "argumentTypes": null,
-                                "id": 192,
+                                "id": 202,
                                 "name": "manager",
                                 "nodeType": "Identifier",
                                 "overloadedDeclarations": [],
                                 "referencedDeclaration": 29,
-                                "src": "1644:7:0",
+                                "src": "1758:7:0",
                                 "typeDescriptions": {
                                   "typeIdentifier": "t_struct$_DownBadManager_$27_storage",
                                   "typeString": "struct DownBad.DownBadManager storage ref"
                                 }
                               },
-                              "id": 193,
+                              "id": 203,
                               "isConstant": false,
                               "isLValue": true,
                               "isPure": false,
@@ -2478,7 +2599,7 @@
                               "memberName": "downBadAddressesArr",
                               "nodeType": "MemberAccess",
                               "referencedDeclaration": 18,
-                              "src": "1644:27:0",
+                              "src": "1758:27:0",
                               "typeDescriptions": {
                                 "typeIdentifier": "t_array$_t_address_payable_$dyn_storage",
                                 "typeString": "address payable[] storage ref"
@@ -2492,18 +2613,18 @@
                                 "typeString": "address payable[] storage ref"
                               }
                             ],
-                            "id": 191,
+                            "id": 201,
                             "name": "LeftDownBad",
                             "nodeType": "Identifier",
                             "overloadedDeclarations": [],
                             "referencedDeclaration": 11,
-                            "src": "1632:11:0",
+                            "src": "1746:11:0",
                             "typeDescriptions": {
                               "typeIdentifier": "t_function_event_nonpayable$_t_array$_t_address_payable_$dyn_memory_ptr_$returns$__$",
                               "typeString": "function (address payable[] memory)"
                             }
                           },
-                          "id": 194,
+                          "id": 204,
                           "isConstant": false,
                           "isLValue": false,
                           "isPure": false,
@@ -2511,15 +2632,15 @@
                           "lValueRequested": false,
                           "names": [],
                           "nodeType": "FunctionCall",
-                          "src": "1632:40:0",
+                          "src": "1746:40:0",
                           "typeDescriptions": {
                             "typeIdentifier": "t_tuple$__$",
                             "typeString": "tuple()"
                           }
                         },
-                        "id": 195,
+                        "id": 205,
                         "nodeType": "EmitStatement",
-                        "src": "1627:45:0"
+                        "src": "1741:45:0"
                       }
                     ]
                   }
@@ -2527,23 +2648,23 @@
               ]
             },
             "documentation": null,
-            "id": 199,
+            "id": 209,
             "implemented": true,
             "kind": "function",
             "modifiers": [],
             "name": "removeDownBad",
             "nodeType": "FunctionDefinition",
             "parameters": {
-              "id": 144,
+              "id": 154,
               "nodeType": "ParameterList",
               "parameters": [
                 {
                   "constant": false,
-                  "id": 143,
+                  "id": 153,
                   "name": "_downBad",
                   "nodeType": "VariableDeclaration",
-                  "scope": 199,
-                  "src": "1262:24:0",
+                  "scope": 209,
+                  "src": "1376:24:0",
                   "stateVariable": false,
                   "storageLocation": "default",
                   "typeDescriptions": {
@@ -2551,10 +2672,10 @@
                     "typeString": "address payable"
                   },
                   "typeName": {
-                    "id": 142,
+                    "id": 152,
                     "name": "address",
                     "nodeType": "ElementaryTypeName",
-                    "src": "1262:15:0",
+                    "src": "1376:15:0",
                     "stateMutability": "payable",
                     "typeDescriptions": {
                       "typeIdentifier": "t_address_payable",
@@ -2565,33 +2686,33 @@
                   "visibility": "internal"
                 }
               ],
-              "src": "1261:26:0"
+              "src": "1375:26:0"
             },
             "returnParameters": {
-              "id": 145,
+              "id": 155,
               "nodeType": "ParameterList",
               "parameters": [],
-              "src": "1295:0:0"
+              "src": "1409:0:0"
             },
-            "scope": 200,
-            "src": "1239:442:0",
+            "scope": 210,
+            "src": "1353:442:0",
             "stateMutability": "nonpayable",
             "superFunction": null,
             "visibility": "public"
           }
         ],
-        "scope": 201,
-        "src": "66:1618:0"
+        "scope": 211,
+        "src": "66:1732:0"
       }
     ],
-    "src": "32:1653:0"
+    "src": "32:1767:0"
   },
   "legacyAST": {
     "attributes": {
       "absolutePath": "project:/contracts/DownBad.sol",
       "exportedSymbols": {
         "DownBad": [
-          200
+          210
         ]
       }
     },
@@ -2624,10 +2745,10 @@
           "documentation": null,
           "fullyImplemented": true,
           "linearizedBaseContracts": [
-            200
+            210
           ],
           "name": "DownBad",
-          "scope": 201
+          "scope": 211
         },
         "children": [
           {
@@ -2797,7 +2918,7 @@
             "attributes": {
               "canonicalName": "DownBad.DownBadManager",
               "name": "DownBadManager",
-              "scope": 200,
+              "scope": 210,
               "visibility": "public"
             },
             "children": [
@@ -2938,7 +3059,7 @@
             "attributes": {
               "constant": false,
               "name": "manager",
-              "scope": 200,
+              "scope": 210,
               "stateVariable": true,
               "storageLocation": "default",
               "type": "struct DownBad.DownBadManager",
@@ -2972,7 +3093,7 @@
                 null
               ],
               "name": "",
-              "scope": 200,
+              "scope": 210,
               "stateMutability": "payable",
               "superFunction": null,
               "visibility": "external"
@@ -3246,7 +3367,7 @@
                                           "overloadedDeclarations": [
                                             null
                                           ],
-                                          "referencedDeclaration": 215,
+                                          "referencedDeclaration": 225,
                                           "type": "msg",
                                           "value": "msg"
                                         },
@@ -3615,7 +3736,7 @@
                                           "overloadedDeclarations": [
                                             null
                                           ],
-                                          "referencedDeclaration": 215,
+                                          "referencedDeclaration": 225,
                                           "type": "msg",
                                           "value": "msg"
                                         },
@@ -3668,7 +3789,7 @@
                 null
               ],
               "name": "isDownBad",
-              "scope": 200,
+              "scope": 210,
               "stateMutability": "view",
               "superFunction": null,
               "visibility": "public"
@@ -3833,7 +3954,7 @@
                 null
               ],
               "name": "joinDownBad",
-              "scope": 200,
+              "scope": 210,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "public"
@@ -4483,8 +4604,133 @@
               "modifiers": [
                 null
               ],
+              "name": "getDownBad",
+              "scope": 210,
+              "stateMutability": "view",
+              "superFunction": null,
+              "visibility": "public"
+            },
+            "children": [
+              {
+                "attributes": {
+                  "parameters": [
+                    null
+                  ]
+                },
+                "children": [],
+                "id": 142,
+                "name": "ParameterList",
+                "src": "1257:2:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "constant": false,
+                      "name": "",
+                      "scope": 151,
+                      "stateVariable": false,
+                      "storageLocation": "memory",
+                      "type": "address payable[]",
+                      "value": null,
+                      "visibility": "internal"
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "length": null,
+                          "type": "address payable[]"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "name": "address",
+                              "stateMutability": "payable",
+                              "type": "address payable"
+                            },
+                            "id": 143,
+                            "name": "ElementaryTypeName",
+                            "src": "1281:15:0"
+                          }
+                        ],
+                        "id": 144,
+                        "name": "ArrayTypeName",
+                        "src": "1281:17:0"
+                      }
+                    ],
+                    "id": 145,
+                    "name": "VariableDeclaration",
+                    "src": "1281:24:0"
+                  }
+                ],
+                "id": 146,
+                "name": "ParameterList",
+                "src": "1280:26:0"
+              },
+              {
+                "children": [
+                  {
+                    "attributes": {
+                      "functionReturnParameters": 146
+                    },
+                    "children": [
+                      {
+                        "attributes": {
+                          "argumentTypes": null,
+                          "isConstant": false,
+                          "isLValue": true,
+                          "isPure": false,
+                          "lValueRequested": false,
+                          "member_name": "downBadAddressesArr",
+                          "referencedDeclaration": 18,
+                          "type": "address payable[] storage ref"
+                        },
+                        "children": [
+                          {
+                            "attributes": {
+                              "argumentTypes": null,
+                              "overloadedDeclarations": [
+                                null
+                              ],
+                              "referencedDeclaration": 29,
+                              "type": "struct DownBad.DownBadManager storage ref",
+                              "value": "manager"
+                            },
+                            "id": 147,
+                            "name": "Identifier",
+                            "src": "1319:7:0"
+                          }
+                        ],
+                        "id": 148,
+                        "name": "MemberAccess",
+                        "src": "1319:27:0"
+                      }
+                    ],
+                    "id": 149,
+                    "name": "Return",
+                    "src": "1312:34:0"
+                  }
+                ],
+                "id": 150,
+                "name": "Block",
+                "src": "1307:43:0"
+              }
+            ],
+            "id": 151,
+            "name": "FunctionDefinition",
+            "src": "1238:112:0"
+          },
+          {
+            "attributes": {
+              "documentation": null,
+              "implemented": true,
+              "isConstructor": false,
+              "kind": "function",
+              "modifiers": [
+                null
+              ],
               "name": "removeDownBad",
-              "scope": 200,
+              "scope": 210,
               "stateMutability": "nonpayable",
               "superFunction": null,
               "visibility": "public"
@@ -4496,7 +4742,7 @@
                     "attributes": {
                       "constant": false,
                       "name": "_downBad",
-                      "scope": 199,
+                      "scope": 209,
                       "stateVariable": false,
                       "storageLocation": "default",
                       "type": "address payable",
@@ -4510,19 +4756,19 @@
                           "stateMutability": "payable",
                           "type": "address payable"
                         },
-                        "id": 142,
+                        "id": 152,
                         "name": "ElementaryTypeName",
-                        "src": "1262:15:0"
+                        "src": "1376:15:0"
                       }
                     ],
-                    "id": 143,
+                    "id": 153,
                     "name": "VariableDeclaration",
-                    "src": "1262:24:0"
+                    "src": "1376:24:0"
                   }
                 ],
-                "id": 144,
+                "id": 154,
                 "name": "ParameterList",
-                "src": "1261:26:0"
+                "src": "1375:26:0"
               },
               {
                 "attributes": {
@@ -4531,9 +4777,9 @@
                   ]
                 },
                 "children": [],
-                "id": 145,
+                "id": 155,
                 "name": "ParameterList",
-                "src": "1295:0:0"
+                "src": "1409:0:0"
               },
               {
                 "children": [
@@ -4572,9 +4818,9 @@
                               "type": "function (address) view returns (bool)",
                               "value": "isDownBad"
                             },
-                            "id": 146,
+                            "id": 156,
                             "name": "Identifier",
-                            "src": "1303:9:0"
+                            "src": "1417:9:0"
                           },
                           {
                             "attributes": {
@@ -4582,25 +4828,25 @@
                               "overloadedDeclarations": [
                                 null
                               ],
-                              "referencedDeclaration": 143,
+                              "referencedDeclaration": 153,
                               "type": "address payable",
                               "value": "_downBad"
                             },
-                            "id": 147,
+                            "id": 157,
                             "name": "Identifier",
-                            "src": "1313:8:0"
+                            "src": "1427:8:0"
                           }
                         ],
-                        "id": 148,
+                        "id": 158,
                         "name": "FunctionCall",
-                        "src": "1303:19:0"
+                        "src": "1417:19:0"
                       },
                       {
                         "children": [
                           {
                             "attributes": {
                               "assignments": [
-                                150
+                                160
                               ]
                             },
                             "children": [
@@ -4608,7 +4854,7 @@
                                 "attributes": {
                                   "constant": false,
                                   "name": "index",
-                                  "scope": 196,
+                                  "scope": 206,
                                   "stateVariable": false,
                                   "storageLocation": "default",
                                   "type": "uint256",
@@ -4621,14 +4867,14 @@
                                       "name": "uint",
                                       "type": "uint256"
                                     },
-                                    "id": 149,
+                                    "id": 159,
                                     "name": "ElementaryTypeName",
-                                    "src": "1329:4:0"
+                                    "src": "1443:4:0"
                                   }
                                 ],
-                                "id": 150,
+                                "id": 160,
                                 "name": "VariableDeclaration",
-                                "src": "1329:10:0"
+                                "src": "1443:10:0"
                               },
                               {
                                 "attributes": {
@@ -4662,14 +4908,14 @@
                                           "type": "struct DownBad.DownBadManager storage ref",
                                           "value": "manager"
                                         },
-                                        "id": 151,
+                                        "id": 161,
                                         "name": "Identifier",
-                                        "src": "1342:7:0"
+                                        "src": "1456:7:0"
                                       }
                                     ],
-                                    "id": 152,
+                                    "id": 162,
                                     "name": "MemberAccess",
-                                    "src": "1342:22:0"
+                                    "src": "1456:22:0"
                                   },
                                   {
                                     "attributes": {
@@ -4677,28 +4923,28 @@
                                       "overloadedDeclarations": [
                                         null
                                       ],
-                                      "referencedDeclaration": 143,
+                                      "referencedDeclaration": 153,
                                       "type": "address payable",
                                       "value": "_downBad"
                                     },
-                                    "id": 153,
+                                    "id": 163,
                                     "name": "Identifier",
-                                    "src": "1365:8:0"
+                                    "src": "1479:8:0"
                                   }
                                 ],
-                                "id": 154,
+                                "id": 164,
                                 "name": "IndexAccess",
-                                "src": "1342:32:0"
+                                "src": "1456:32:0"
                               }
                             ],
-                            "id": 155,
+                            "id": 165,
                             "name": "VariableDeclarationStatement",
-                            "src": "1329:45:0"
+                            "src": "1443:45:0"
                           },
                           {
                             "attributes": {
                               "assignments": [
-                                157
+                                167
                               ]
                             },
                             "children": [
@@ -4706,7 +4952,7 @@
                                 "attributes": {
                                   "constant": false,
                                   "name": "arrLength",
-                                  "scope": 196,
+                                  "scope": 206,
                                   "stateVariable": false,
                                   "storageLocation": "default",
                                   "type": "uint256",
@@ -4719,14 +4965,14 @@
                                       "name": "uint",
                                       "type": "uint256"
                                     },
-                                    "id": 156,
+                                    "id": 166,
                                     "name": "ElementaryTypeName",
-                                    "src": "1379:4:0"
+                                    "src": "1493:4:0"
                                   }
                                 ],
-                                "id": 157,
+                                "id": 167,
                                 "name": "VariableDeclaration",
-                                "src": "1379:14:0"
+                                "src": "1493:14:0"
                               },
                               {
                                 "attributes": {
@@ -4762,24 +5008,24 @@
                                           "type": "struct DownBad.DownBadManager storage ref",
                                           "value": "manager"
                                         },
-                                        "id": 158,
+                                        "id": 168,
                                         "name": "Identifier",
-                                        "src": "1396:7:0"
+                                        "src": "1510:7:0"
                                       }
                                     ],
-                                    "id": 159,
+                                    "id": 169,
                                     "name": "MemberAccess",
-                                    "src": "1396:27:0"
+                                    "src": "1510:27:0"
                                   }
                                 ],
-                                "id": 160,
+                                "id": 170,
                                 "name": "MemberAccess",
-                                "src": "1396:34:0"
+                                "src": "1510:34:0"
                               }
                             ],
-                            "id": 161,
+                            "id": 171,
                             "name": "VariableDeclarationStatement",
-                            "src": "1379:51:0"
+                            "src": "1493:51:0"
                           },
                           {
                             "children": [
@@ -4826,14 +5072,14 @@
                                               "type": "struct DownBad.DownBadManager storage ref",
                                               "value": "manager"
                                             },
-                                            "id": 162,
+                                            "id": 172,
                                             "name": "Identifier",
-                                            "src": "1435:7:0"
+                                            "src": "1549:7:0"
                                           }
                                         ],
-                                        "id": 165,
+                                        "id": 175,
                                         "name": "MemberAccess",
-                                        "src": "1435:27:0"
+                                        "src": "1549:27:0"
                                       },
                                       {
                                         "attributes": {
@@ -4841,18 +5087,18 @@
                                           "overloadedDeclarations": [
                                             null
                                           ],
-                                          "referencedDeclaration": 150,
+                                          "referencedDeclaration": 160,
                                           "type": "uint256",
                                           "value": "index"
                                         },
-                                        "id": 164,
+                                        "id": 174,
                                         "name": "Identifier",
-                                        "src": "1463:5:0"
+                                        "src": "1577:5:0"
                                       }
                                     ],
-                                    "id": 166,
+                                    "id": 176,
                                     "name": "IndexAccess",
-                                    "src": "1435:34:0"
+                                    "src": "1549:34:0"
                                   },
                                   {
                                     "attributes": {
@@ -4886,14 +5132,14 @@
                                               "type": "struct DownBad.DownBadManager storage ref",
                                               "value": "manager"
                                             },
-                                            "id": 167,
+                                            "id": 177,
                                             "name": "Identifier",
-                                            "src": "1472:7:0"
+                                            "src": "1586:7:0"
                                           }
                                         ],
-                                        "id": 168,
+                                        "id": 178,
                                         "name": "MemberAccess",
-                                        "src": "1472:27:0"
+                                        "src": "1586:27:0"
                                       },
                                       {
                                         "attributes": {
@@ -4916,13 +5162,13 @@
                                               "overloadedDeclarations": [
                                                 null
                                               ],
-                                              "referencedDeclaration": 157,
+                                              "referencedDeclaration": 167,
                                               "type": "uint256",
                                               "value": "arrLength"
                                             },
-                                            "id": 169,
+                                            "id": 179,
                                             "name": "Identifier",
-                                            "src": "1500:9:0"
+                                            "src": "1614:9:0"
                                           },
                                           {
                                             "attributes": {
@@ -4937,29 +5183,29 @@
                                               "type": "int_const 1",
                                               "value": "1"
                                             },
-                                            "id": 170,
+                                            "id": 180,
                                             "name": "Literal",
-                                            "src": "1512:1:0"
+                                            "src": "1626:1:0"
                                           }
                                         ],
-                                        "id": 171,
+                                        "id": 181,
                                         "name": "BinaryOperation",
-                                        "src": "1500:13:0"
+                                        "src": "1614:13:0"
                                       }
                                     ],
-                                    "id": 172,
+                                    "id": 182,
                                     "name": "IndexAccess",
-                                    "src": "1472:42:0"
+                                    "src": "1586:42:0"
                                   }
                                 ],
-                                "id": 173,
+                                "id": 183,
                                 "name": "Assignment",
-                                "src": "1435:79:0"
+                                "src": "1549:79:0"
                               }
                             ],
-                            "id": 174,
+                            "id": 184,
                             "name": "ExpressionStatement",
-                            "src": "1435:79:0"
+                            "src": "1549:79:0"
                           },
                           {
                             "children": [
@@ -5007,14 +5253,14 @@
                                               "type": "struct DownBad.DownBadManager storage ref",
                                               "value": "manager"
                                             },
-                                            "id": 175,
+                                            "id": 185,
                                             "name": "Identifier",
-                                            "src": "1526:7:0"
+                                            "src": "1640:7:0"
                                           }
                                         ],
-                                        "id": 176,
+                                        "id": 186,
                                         "name": "MemberAccess",
-                                        "src": "1526:27:0"
+                                        "src": "1640:27:0"
                                       },
                                       {
                                         "attributes": {
@@ -5037,13 +5283,13 @@
                                               "overloadedDeclarations": [
                                                 null
                                               ],
-                                              "referencedDeclaration": 157,
+                                              "referencedDeclaration": 167,
                                               "type": "uint256",
                                               "value": "arrLength"
                                             },
-                                            "id": 177,
+                                            "id": 187,
                                             "name": "Identifier",
-                                            "src": "1554:9:0"
+                                            "src": "1668:9:0"
                                           },
                                           {
                                             "attributes": {
@@ -5058,29 +5304,29 @@
                                               "type": "int_const 1",
                                               "value": "1"
                                             },
-                                            "id": 178,
+                                            "id": 188,
                                             "name": "Literal",
-                                            "src": "1566:1:0"
+                                            "src": "1680:1:0"
                                           }
                                         ],
-                                        "id": 179,
+                                        "id": 189,
                                         "name": "BinaryOperation",
-                                        "src": "1554:13:0"
+                                        "src": "1668:13:0"
                                       }
                                     ],
-                                    "id": 180,
+                                    "id": 190,
                                     "name": "IndexAccess",
-                                    "src": "1526:42:0"
+                                    "src": "1640:42:0"
                                   }
                                 ],
-                                "id": 181,
+                                "id": 191,
                                 "name": "UnaryOperation",
-                                "src": "1519:49:0"
+                                "src": "1633:49:0"
                               }
                             ],
-                            "id": 182,
+                            "id": 192,
                             "name": "ExpressionStatement",
-                            "src": "1519:49:0"
+                            "src": "1633:49:0"
                           },
                           {
                             "children": [
@@ -5127,14 +5373,14 @@
                                               "type": "struct DownBad.DownBadManager storage ref",
                                               "value": "manager"
                                             },
-                                            "id": 183,
+                                            "id": 193,
                                             "name": "Identifier",
-                                            "src": "1573:7:0"
+                                            "src": "1687:7:0"
                                           }
                                         ],
-                                        "id": 186,
+                                        "id": 196,
                                         "name": "MemberAccess",
-                                        "src": "1573:31:0"
+                                        "src": "1687:31:0"
                                       },
                                       {
                                         "attributes": {
@@ -5142,18 +5388,18 @@
                                           "overloadedDeclarations": [
                                             null
                                           ],
-                                          "referencedDeclaration": 143,
+                                          "referencedDeclaration": 153,
                                           "type": "address payable",
                                           "value": "_downBad"
                                         },
-                                        "id": 185,
+                                        "id": 195,
                                         "name": "Identifier",
-                                        "src": "1605:8:0"
+                                        "src": "1719:8:0"
                                       }
                                     ],
-                                    "id": 187,
+                                    "id": 197,
                                     "name": "IndexAccess",
-                                    "src": "1573:41:0"
+                                    "src": "1687:41:0"
                                   },
                                   {
                                     "attributes": {
@@ -5168,19 +5414,19 @@
                                       "type": "bool",
                                       "value": "false"
                                     },
-                                    "id": 188,
+                                    "id": 198,
                                     "name": "Literal",
-                                    "src": "1617:5:0"
+                                    "src": "1731:5:0"
                                   }
                                 ],
-                                "id": 189,
+                                "id": 199,
                                 "name": "Assignment",
-                                "src": "1573:49:0"
+                                "src": "1687:49:0"
                               }
                             ],
-                            "id": 190,
+                            "id": 200,
                             "name": "ExpressionStatement",
-                            "src": "1573:49:0"
+                            "src": "1687:49:0"
                           },
                           {
                             "children": [
@@ -5214,9 +5460,9 @@
                                       "type": "function (address payable[] memory)",
                                       "value": "LeftDownBad"
                                     },
-                                    "id": 191,
+                                    "id": 201,
                                     "name": "Identifier",
-                                    "src": "1632:11:0"
+                                    "src": "1746:11:0"
                                   },
                                   {
                                     "attributes": {
@@ -5240,60 +5486,66 @@
                                           "type": "struct DownBad.DownBadManager storage ref",
                                           "value": "manager"
                                         },
-                                        "id": 192,
+                                        "id": 202,
                                         "name": "Identifier",
-                                        "src": "1644:7:0"
+                                        "src": "1758:7:0"
                                       }
                                     ],
-                                    "id": 193,
+                                    "id": 203,
                                     "name": "MemberAccess",
-                                    "src": "1644:27:0"
+                                    "src": "1758:27:0"
                                   }
                                 ],
-                                "id": 194,
+                                "id": 204,
                                 "name": "FunctionCall",
-                                "src": "1632:40:0"
+                                "src": "1746:40:0"
                               }
                             ],
-                            "id": 195,
+                            "id": 205,
                             "name": "EmitStatement",
-                            "src": "1627:45:0"
+                            "src": "1741:45:0"
                           }
                         ],
-                        "id": 196,
+                        "id": 206,
                         "name": "Block",
-                        "src": "1323:354:0"
+                        "src": "1437:354:0"
                       }
                     ],
-                    "id": 197,
+                    "id": 207,
                     "name": "IfStatement",
-                    "src": "1300:377:0"
+                    "src": "1414:377:0"
                   }
                 ],
-                "id": 198,
+                "id": 208,
                 "name": "Block",
-                "src": "1295:386:0"
+                "src": "1409:386:0"
               }
             ],
-            "id": 199,
+            "id": 209,
             "name": "FunctionDefinition",
-            "src": "1239:442:0"
+            "src": "1353:442:0"
           }
         ],
-        "id": 200,
+        "id": 210,
         "name": "ContractDefinition",
-        "src": "66:1618:0"
+        "src": "66:1732:0"
       }
     ],
-    "id": 201,
+    "id": 211,
     "name": "SourceUnit",
-    "src": "32:1653:0"
+    "src": "32:1767:0"
   },
   "compiler": {
     "name": "solc",
     "version": "0.5.16+commit.9c3226ce.Emscripten.clang"
   },
   "networks": {
+    "3": {
+      "events": {},
+      "links": {},
+      "address": "0xc38925b4688ff0101A40317c8d64ADD74723aa7e",
+      "transactionHash": "0x1816ccbe49a0a6d1a8d5267bb473e2bf49e81454c6efede5eea877dfcbcf7437"
+    },
     "5777": {
       "events": {},
       "links": {},
@@ -5335,10 +5587,40 @@
       "links": {},
       "address": "0xbf0683cD2b4d95B24EDdA01d53f3fC280035aF88",
       "transactionHash": "0xb5a912cc06ce03e38848a6b8a6f8fe271ff3c480ab8f57fe3b61ee5c6870e9ff"
+    },
+    "1639171454377": {
+      "events": {},
+      "links": {},
+      "address": "0xA0FD891264670c3db974Aae66F199C3600D0e31A",
+      "transactionHash": "0x631bde74dc481070710f6ff14b76cee32586fc364a047caaef23e1c8ece7c92d"
+    },
+    "1639348780691": {
+      "events": {},
+      "links": {},
+      "address": "0xD7164E7c53c99f8188AE566f4e34139E25676a2b",
+      "transactionHash": "0xe86011a5b764657b73c6868737771b0770a03ee96ffbdeebac07deac5ffbf7a0"
+    },
+    "1639356065152": {
+      "events": {},
+      "links": {},
+      "address": "0xDA4Fb17c1907db026C6c0002F3B275528F349E30",
+      "transactionHash": "0xfbcc674cd04c3a38870ba50e83032082ee23d7144edb85b5639cd97eb37e5e88"
+    },
+    "1639371125978": {
+      "events": {},
+      "links": {},
+      "address": "0x4C4E86809f9a11f3A8D3a76Cc7b26F8EEBc06176",
+      "transactionHash": "0x1c080440c960bcfa07b7831cc8f425f5a6d5001851f34c432d5ef62fb1b20f30"
+    },
+    "1639517335909": {
+      "events": {},
+      "links": {},
+      "address": "0xAE3E63E84731319A385686BE67C66a7C8D994010",
+      "transactionHash": "0x90ff64e05941f60a05d7da669b0b42d375be452d005a9901506bb50f68644037"
     }
   },
   "schemaVersion": "3.4.2",
-  "updatedAt": "2021-12-10T18:41:23.582Z",
+  "updatedAt": "2021-12-14T21:29:28.861Z",
   "networkType": "ethereum",
   "devdoc": {
     "methods": {}
