@@ -1,5 +1,5 @@
-# DownBad
-The DownBad Smart Contract is meant to serve as a prototype for how simple smart contracts can be used to automate institutions such as charities. This prototype allows people to add and remove themselves from a list. When people donate money to the smart contract, the donation is automatically dispersed evenly amongst those on the list.
+# Charity-Dapp
+The Charity-Dapp Smart Contract is meant to serve as a prototype for how simple smart contracts can be used to automate institutions such as charities. This prototype allows people to add and remove themselves from a list. When people donate money to the smart contract, the donation is automatically dispersed evenly amongst those on the list.
 
 ## Getting Started
 
@@ -9,7 +9,7 @@ Access the following link to download and install the Metamask extension for you
 ### Get ether from Ropsten Test Network
 Once you have Metamask setup and set to the Ropsten Test Network, use the following faucet to add ether to your account: https://faucet.metamask.io/
 
-### Accessing interface from the following page
+### Accessing The Interface
 Check out the interface here: https://downbad-interface.herokuapp.com/
 
 ### Enjoy messing around with this prototype
